@@ -1,5 +1,15 @@
 # מכ״ם מגפות ישראל + יחידת לימוד "מגפות וחיסונים"
 
+## 🎓 [כניסה ליחידת הלימוד](https://shulykotzer.github.io/epidemic-radar/learn/)
+
+| | קישור |
+|---|---|
+| 📘 יחידת הלימוד לתלמידים | https://shulykotzer.github.io/epidemic-radar/learn/ |
+| 📝 תיק חקירה (עבודה בקבוצות) | https://shulykotzer.github.io/epidemic-radar/learn/research.html |
+| 📡 מכ״ם המגפות | https://shulykotzer.github.io/epidemic-radar/ |
+| 🔎 חקר מגפות | https://shulykotzer.github.io/epidemic-radar/disease.html |
+| 👩‍🏫 מדריך למורה ומחוון | https://shulykotzer.github.io/epidemic-radar/learn/teacher.html |
+
 אתר סטטי (מתאים ל-GitHub Pages) עם שני חלקים:
 
 | חלק | קובץ | מה יש בו |

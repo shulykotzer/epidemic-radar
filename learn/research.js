@@ -163,6 +163,12 @@ function exitDeck() {
   if (document.fullscreenElement) document.exitFullscreen();
 }
 function printPDF() {
+  // First time only: remind students that the print dialog is how a PDF is saved.
+  let seen = false;
+  try { seen = !!localStorage.getItem("pdf-help-seen"); localStorage.setItem("pdf-help-seen", "1"); } catch { /* private mode */ }
+  if (!seen && !confirm("בחלון שייפתח בחרו \"שמירה כ-PDF\" במקום מדפסת.\nבאייפון: לחצו על כפתור השיתוף ובחרו \"שמירה בקבצים\".\n\nלהמשיך?")) {
+    $("#help").open = true; $("#help").scrollIntoView({ behavior: "smooth" }); return;
+  }
   buildSlides();
   document.body.classList.add("print-deck");
   $("#deck").hidden = false;

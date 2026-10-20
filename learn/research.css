@@ -78,3 +78,11 @@ body.blank { background: #fff; color: #0b0b0b; }
 @page sheet { size: A4 portrait; margin: 10mm 0; }
 .slide { page: deck; }
 .ws { page: sheet; }
+
+/* help box */
+.help { background: var(--card); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 14px; }
+.help summary { cursor: pointer; padding: 12px 16px; font-weight: 700; font-size: 15px; }
+.help[open] summary { border-bottom: 1px solid var(--grid); }
+.help-body { padding: 4px 18px 14px; }
+.help-body h3 { font-size: 16px; margin: 14px 0 4px; }
+.help-body p, .help-body li { font-size: 14.5px; line-height: 1.65; margin: 4px 0; }

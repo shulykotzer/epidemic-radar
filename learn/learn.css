@@ -124,3 +124,29 @@
 .why.ok b { color: var(--good-t); } .why.no b { color: var(--bad-t); }
 .reset { margin-top: 6px; font-size: 13px; }
 .steps li { margin-bottom: 6px; }
+
+/* my answers */
+.mine-card { display: grid; grid-template-columns: 2fr 1fr; gap: 12px; max-width: 520px; }
+.mine-card label { display: flex; flex-direction: column; gap: 4px; font-size: 14px; font-weight: 500; }
+.mine-card input { font: inherit; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); color: var(--ink); }
+.mine-scores { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; margin: 14px 0; }
+.mine-scores > div { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 10px 14px; display: flex; flex-direction: column; }
+.mine-scores span { font-size: 13px; color: var(--ink-2); } .mine-scores b { font-size: 24px; } .mine-scores small { color: var(--muted); }
+.pdf-how summary { cursor: pointer; }
+.pdf-how ul { margin: 6px 0; }
+.report { display: none; }
+@media print {
+  body.print-report > *:not(#report) { display: none !important; }
+  body.print-report .report { display: block !important; color: #0b0b0b; font-size: 11pt; }
+  body.print-report { background: #fff; }
+  .rp-h { display: flex; justify-content: space-between; border-bottom: 3px solid #2a78d6; padding-bottom: 8px; margin-bottom: 10px; }
+  .rp-h h1 { font-size: 22pt; margin: 0; } .rp-k { color: #2a78d6; font-weight: 700; font-size: 10pt; }
+  .rp-meta { text-align: left; font-size: 11pt; } .rp-total { font-weight: 800; font-size: 13pt; margin-top: 4px; }
+  .rp-ch h2 { font-size: 14pt; margin: 14px 0 6px; display: flex; justify-content: space-between; break-after: avoid; }
+  .rp-ch h2 span { color: #2a78d6; }
+  .rp-q { break-inside: avoid; border-inline-start: 4px solid #c3c2b7; padding: 4px 10px; margin: 6px 0; }
+  .rp-q.ok { border-color: #0ca30c; } .rp-q.no { border-color: #d03b3b; }
+  .rp-q p { margin: 2px 0; } .rp-c { color: #006300; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+@media (max-width: 500px) { .mine-card { grid-template-columns: 1fr; } }

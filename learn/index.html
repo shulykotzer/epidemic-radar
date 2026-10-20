@@ -35,6 +35,7 @@
       <li><a href="#ch2">קווי ההגנה של הגוף</a><span class="prog" data-quiz="q2"></span></li>
       <li><a href="#ch3">מגפות שעיצבו את ההיסטוריה</a><span class="prog" data-quiz="q3"></span></li>
       <li><a href="#ch4">חיסונים</a><span class="prog" data-quiz="q4"></span></li>
+      <li><a href="#mine">התשובות שלי · PDF</a></li>
       <li><a href="#ch5">המחקר שלכם</a></li>
     </ol>
   </aside>
@@ -193,6 +194,28 @@
     </section>
 
     <!-- ============================================================ 5 -->
+    <section id="mine" class="chapter">
+      <div class="ch-num">סיכום</div>
+      <h2>התשובות שלי</h2>
+      <p>כאן רואים את הציון בכל פרק, ואפשר לשמור את כל התשובות כקובץ PDF כדי להגיש למורה.</p>
+      <div class="mine-card">
+        <label>שם מלא<input id="stName" type="text" placeholder="שם פרטי ושם משפחה"></label>
+        <label>כיתה<input id="stClass" type="text" placeholder="י'2"></label>
+      </div>
+      <div id="mineScores" class="mine-scores"></div>
+      <p><button type="button" class="btn btn-primary" id="exportAnswers">📄 שמירת התשובות שלי כ-PDF</button></p>
+      <details class="note pdf-how">
+        <summary><b>איך שומרים כ-PDF?</b></summary>
+        <p>בחלון שנפתח לא מדפיסים, אלא:</p>
+        <ul>
+          <li><b>במחשב:</b> ב"יעד" או ב"מדפסת" בוחרים <b>"שמירה כ-PDF"</b> ולוחצים "שמירה".</li>
+          <li><b>באנדרואיד:</b> למעלה בוחרים <b>"שמירה כ-PDF"</b> ולוחצים על הכפתור PDF.</li>
+          <li><b>באייפון:</b> לוחצים על <b>כפתור השיתוף</b> (ריבוע עם חץ) ובוחרים <b>"שמירה בקבצים"</b>, או שולחים ישירות בוואטסאפ או במייל.</li>
+        </ul>
+        <p class="muted">התשובות נשמרות במכשיר שבו עניתם. כדאי לייצא אותן מאותו מכשיר.</p>
+      </details>
+    </section>
+
     <section id="ch5" class="chapter">
       <div class="ch-num">פרק 5</div>
       <h2>המחקר שלכם: תיק חקירה של מגפה</h2>
@@ -201,7 +224,7 @@
         <li><b>בחירת מחלה:</b> בעמוד <a href="../disease.html">חקר מגפות</a> או מתוך <a href="../index.html">המכ״ם</a>.</li>
         <li><b>איסוף נתונים:</b> גרף הדיווחים לפי שנה, המדינות שנפגעו, דרך ההדבקה, החיסון ואחוזי החיסון בישראל.</li>
         <li><b>מילוי תיק החקירה:</b> בטלפון או במחשב. התשובות נשמרות אוטומטית במכשיר.</li>
-        <li><b>הצגה:</b> כפתור "מצב מצגת" הופך את התיק לשקפים. כפתור "שמירה כ-PDF" מייצא אותו להגשה.</li>
+        <li><b>הצגה והגשה:</b> כפתור "מצב מצגת" הופך את התיק לשקפים. כפתור "שמירה כ-PDF" מייצא אותו לקובץ: בחלון ההדפסה בוחרים "שמירה כ-PDF" במקום מדפסת. הוראות מפורטות לכל מכשיר מופיעות בראש תיק החקירה.</li>
       </ol>
       <p><a class="btn btn-primary" href="research.html">פתיחת תיק חקירה ←</a>
          <a class="btn" href="../pdf/research-worksheet.pdf" target="_blank">דף עבודה להדפסה (PDF)</a></p>
@@ -211,6 +234,7 @@
     <p class="muted teacher-link" style="margin-top:40px;font-size:13px">למורים: <a href="teacher.html">מדריך למורה, מערך שיעורים, מחוון ומפתח תשובות</a></p>
   </main>
 </div>
+<div id="report" class="report" hidden></div>
 <div id="tip" class="tip" role="tooltip" hidden></div>
 <script src="../assets/core.js"></script>
 <script src="quiz-data.js"></script>

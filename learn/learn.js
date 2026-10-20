@@ -15,7 +15,7 @@ function renderQuiz(el) {
       <legend><span class="qn">${i + 1}</span>${esc(q.q)}</legend>
       <div class="opts">${q.o.map((o, j) => `<button type="button" class="opt" data-j="${j}">${esc(o)}</button>`).join("")}</div>
       <div class="why" hidden></div></fieldset>`).join("") +
-    `<button type="button" class="btn reset">איפוס התשובות</button>`;
+    `<button type="button" class="btn reset">איפוס התשובות</button> <a class="btn" href="#mine">לסיכום ולשמירה כ-PDF</a>`;
   const mark = (fs, j) => {
     const i = +fs.dataset.i, q = qs[i];
     fs.querySelectorAll(".opt").forEach((b, k) => {
@@ -47,6 +47,7 @@ function updateScore(id) {
   const answered = Object.keys(saved).length, right = Object.entries(saved).filter(([i, j]) => qs[i].a === j).length;
   const txt = answered ? `${right}/${qs.length} נכונות` : "";
   const s = document.getElementById("score-" + id); if (s) s.textContent = txt;
+  renderScores();
   const p = document.querySelector(`.prog[data-quiz="${id}"]`);
   if (p) { p.textContent = answered === qs.length ? `${right}/${qs.length}` : answered ? "…" : ""; p.className = "prog" + (answered === qs.length ? " done" : ""); }
 }
@@ -140,5 +141,43 @@ async function liveImm() {
     <p class="muted" style="margin:6px 0 0;font-size:13px">שאלה למחשבה: האם הכיסוי הארצי מעל סף חסינות העדר? ומה זה אומר על קהילה שבה הכיסוי נמוך יותר?</p>`;
 }
 
+/* ------------------------------------------------------------ my answers → PDF */
+const CH = { q1: "פרק 1: מה זו מגפה?", q2: "פרק 2: קווי ההגנה של הגוף", q3: "פרק 3: מגפות בהיסטוריה", q4: "פרק 4: חיסונים" };
+function tally(id) {
+  const saved = store.get("quiz-" + id) || {}, qs = QUIZ[id];
+  return { saved, qs, answered: Object.keys(saved).length, right: Object.entries(saved).filter(([i, j]) => qs[i].a === j).length };
+}
+function renderScores() {
+  const el = $("#mineScores"); if (!el) return;
+  el.innerHTML = Object.keys(QUIZ).map((id) => { const t = tally(id);
+    return `<div><span>${CH[id]}</span><b>${t.answered ? `${t.right}/${t.qs.length}` : "—"}</b><small>${t.answered < t.qs.length ? `נענו ${t.answered} מתוך ${t.qs.length}` : "הושלם ✓"}</small></div>`; }).join("");
+}
+function exportAnswers() {
+  const name = $("#stName").value.trim(), cls = $("#stClass").value.trim();
+  if (!name) { alert("כתבו את השם שלכם לפני השמירה"); $("#stName").focus(); return; }
+  store.set("student", { name, cls });
+  let totR = 0, totQ = 0;
+  const body = Object.keys(QUIZ).map((id) => {
+    const t = tally(id); totR += t.right; totQ += t.qs.length;
+    return `<section class="rp-ch"><h2>${CH[id]} <span>${t.right}/${t.qs.length}</span></h2>${t.qs.map((q, i) => {
+      const j = t.saved[i], ok = j === q.a;
+      return `<div class="rp-q ${j == null ? "skip" : ok ? "ok" : "no"}"><p><b>${i + 1}.</b> ${esc(q.q)}</p>
+        <p>${j == null ? "<em>לא נענתה</em>" : `${ok ? "✓" : "✗"} התשובה שלי: ${esc(q.o[j])}`}</p>
+        ${j != null && !ok ? `<p class="rp-c">התשובה הנכונה: ${esc(q.o[q.a])}</p>` : ""}</div>`; }).join("")}</section>`;
+  }).join("");
+  $("#report").innerHTML = `<header class="rp-h"><div><div class="rp-k">מגפות וחיסונים · יחידת לימוד</div><h1>התשובות שלי</h1></div>
+    <div class="rp-meta"><div><b>${esc(name)}</b>${cls ? " · " + esc(cls) : ""}</div><div>${new Date().toLocaleDateString("he-IL")}</div><div class="rp-total">ציון כולל: ${totR}/${totQ} (${Math.round((totR / totQ) * 100)}%)</div></div></header>${body}`;
+  const old = document.title;
+  document.title = `התשובות שלי - ${name}`;
+  document.body.classList.add("print-report"); $("#report").hidden = false;
+  setTimeout(() => { window.print(); document.title = old; document.body.classList.remove("print-report"); $("#report").hidden = true; }, 50);
+}
+{
+  const st = store.get("student") || {};
+  if ($("#stName")) { $("#stName").value = st.name || ""; $("#stClass").value = st.cls || ""; }
+  $("#exportAnswers")?.addEventListener("click", exportAnswers);
+}
+
 document.querySelectorAll(".quiz").forEach(renderQuiz);
+renderScores();
 r0sim(); respChart(); timeline(); liveImm();

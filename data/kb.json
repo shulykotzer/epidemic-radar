@@ -1,0 +1,872 @@
+{
+ "diseases": [
+  {
+   "id": "ebola-bdbv",
+   "he": "אבולה (זן בונדיבוגיו)",
+   "en": "Ebola (Bundibugyo virus)",
+   "match": [
+    "ebola.*bundibugyo",
+    "bundibugyo"
+   ],
+   "mode": "contact",
+   "medline": "ebola",
+   "spread_he": "מגע ישיר בדם ובנוזלי גוף של חולה עם תסמינים או של נפטר. אינה מועברת באוויר.",
+   "incubation": "2–21 ימים",
+   "cfr": "כ-30%–50%",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון מאושר לזן בונדיבוגיו. החיסון הקיים (Ervebo) מגן רק מפני זן זאיר. חיסונים ניסיוניים נבדקים בניסויים.",
+   "israel_he": "בישראל לא דווח אף מקרה אבולה, ואין חסינות באוכלוסייה. אין טיסות ישירות לקונגו. בתי החולים (למשל שיבא) מוכנים לבידוד חולה מיובא.",
+   "don": [
+    "bundibugyo"
+   ]
+  },
+  {
+   "id": "ebola-sudv",
+   "he": "אבולה (זן סודן)",
+   "en": "Sudan virus disease",
+   "match": [
+    "sudan virus",
+    "ebola.*sudan"
+   ],
+   "mode": "contact",
+   "medline": "ebola",
+   "spread_he": "מגע ישיר בדם ובנוזלי גוף של חולה עם תסמינים או של נפטר.",
+   "incubation": "2–21 ימים",
+   "cfr": "כ-40%–50%",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון מאושר לזן סודן. Ervebo לא מגן מפניו. חיסונים ניסיוניים נבדקו באוגנדה.",
+   "israel_he": "בישראל לא דווח אף מקרה, ואין חסינות באוכלוסייה.",
+   "don": [
+    "sudan virus"
+   ]
+  },
+  {
+   "id": "ebola",
+   "he": "אבולה",
+   "en": "Ebola virus disease",
+   "match": [
+    "ebola"
+   ],
+   "mode": "contact",
+   "medline": "ebola",
+   "spread_he": "מגע ישיר בדם ובנוזלי גוף של חולה עם תסמינים או של נפטר. אינה מועברת באוויר.",
+   "incubation": "2–21 ימים",
+   "cfr": "25%–90% (תלוי בזן)",
+   "vaccine": "none",
+   "vaccine_he": "לזן זאיר יש חיסון (Ervebo), ובו מחסנים צוותים ומגעים באזור ההתפרצות. הוא לא ניתן בישראל לציבור. לזנים סודן ובונדיבוגיו אין חיסון מאושר.",
+   "israel_he": "בישראל לא דווח אף מקרה אבולה, ואין חסינות באוכלוסייה.",
+   "don": [
+    "ebola"
+   ]
+  },
+  {
+   "id": "marburg",
+   "he": "מרבורג",
+   "en": "Marburg virus disease",
+   "match": [
+    "marburg"
+   ],
+   "mode": "contact",
+   "medline": "hemorrhagic fevers",
+   "spread_he": "מעטלפי פירות אל האדם, ואחר כך מגע ישיר בנוזלי גוף של חולה.",
+   "incubation": "2–21 ימים",
+   "cfr": "24%–88%",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון מאושר. חיסונים ניסיוניים נבדקו בהתפרצויות האחרונות.",
+   "israel_he": "בישראל לא דווח אף מקרה. מאתיופיה יש טיסות ישירות וקשרי עלייה, ולכן הקישוריות בינונית-גבוהה.",
+   "don": [
+    "marburg"
+   ]
+  },
+  {
+   "id": "mers",
+   "he": "MERS (קורונה מזרח תיכונית)",
+   "en": "MERS-CoV",
+   "match": [
+    "middle east respiratory",
+    "\\bmers\\b"
+   ],
+   "mode": "zoonotic",
+   "medline": "MERS",
+   "spread_he": "בעיקר מגמלים. בין בני אדם ההדבקה מוגבלת, ובעיקר בבתי חולים.",
+   "incubation": "2–14 ימים",
+   "cfr": "כ-35%",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון לבני אדם.",
+   "israel_he": "בישראל לא אושר אף מקרה. עולי רגל לחג' (דרך ירדן) הם נקודת החשיפה העיקרית.",
+   "don": [
+    "middle east respiratory",
+    "mers-cov"
+   ]
+  },
+  {
+   "id": "nipah",
+   "he": "נגיף ניפה",
+   "en": "Nipah virus",
+   "match": [
+    "nipah"
+   ],
+   "mode": "zoonotic",
+   "medline": "nipah virus",
+   "spread_he": "מעטלפי פירות (למשל דרך מיץ דקלים גולמי), וגם הדבקה מוגבלת מאדם לאדם במגע קרוב.",
+   "incubation": "4–14 ימים",
+   "cfr": "40%–75%",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון מאושר.",
+   "israel_he": "לא דווח בישראל. יש תנועת מטיילים ועובדים מהודו, אבל ההתפרצויות מקומיות (קראלה, מערב בנגל, בנגלדש).",
+   "don": [
+    "nipah"
+   ]
+  },
+  {
+   "id": "measles",
+   "he": "חצבת",
+   "en": "Measles",
+   "match": [
+    "measles"
+   ],
+   "mode": "respiratory",
+   "medline": "measles",
+   "gho": [
+    "WHS8_110",
+    "MCV2"
+   ],
+   "spread_he": "באוויר. זו אחת המחלות המדבקות ביותר: חולה אחד מדביק 12–18 אנשים שאינם מחוסנים.",
+   "incubation": "7–21 ימים",
+   "cfr": "0.1%–0.3% במדינות מפותחות",
+   "vaccine": "routine",
+   "vaccine_he": "חיסון MMRV ניתן בשגרה בגיל שנה ובכיתה א'. שתי מנות מגינות כ-97%.",
+   "israel_he": "ההתפרצויות בישראל (2018–2019 ו-2025) התרכזו בקהילות עם שיעורי חיסון נמוכים. הממוצע הארצי גבוה, אבל יש כיסים לא מחוסנים.",
+   "don": [
+    "measles"
+   ]
+  },
+  {
+   "id": "polio",
+   "he": "פוליו (שיתוק ילדים)",
+   "en": "Poliomyelitis",
+   "match": [
+    "polio"
+   ],
+   "mode": "foodwater",
+   "medline": "polio",
+   "gho": [
+    "WHS4_544"
+   ],
+   "spread_he": "צואתי-פומי (מים ומזון מזוהמים) וגם בטיפות.",
+   "incubation": "7–14 ימים",
+   "cfr": "2%–10% מהמקרים המשתקים",
+   "vaccine": "routine",
+   "vaccine_he": "IPV (מומת) ו-bOPV (חי מוחלש) ניתנים בשגרה.",
+   "israel_he": "ב-2022 נמצא בירושלים מקרה פוליו משתק (cVDPV3), ונגיף אותר בשפכים. הממוצע הארצי גבוה, אבל יש קהילות עם שיעורי חיסון נמוכים.",
+   "don": [
+    "polio"
+   ]
+  },
+  {
+   "id": "diphtheria",
+   "he": "דיפתריה (קרמת)",
+   "en": "Diphtheria",
+   "match": [
+    "diphtheria"
+   ],
+   "mode": "respiratory",
+   "medline": "diphtheria",
+   "gho": [
+    "WHS4_100"
+   ],
+   "spread_he": "בטיפות ובמגע קרוב.",
+   "incubation": "2–5 ימים",
+   "cfr": "5%–10%",
+   "vaccine": "routine",
+   "vaccine_he": "חלק מהמשושה (DTaP-IPV-Hib-HBV) הניתן בשגרה לתינוקות, ועם מנות דחף בהמשך.",
+   "israel_he": "כיסוי גבוה. מבוגרים צריכים מנת דחף כל 10 שנים, ורבים לא מקבלים אותה.",
+   "don": [
+    "diphtheria"
+   ]
+  },
+  {
+   "id": "avian-flu",
+   "he": "שפעת העופות",
+   "en": "Avian influenza",
+   "match": [
+    "avian influenza",
+    "\\bh5n\\d",
+    "\\bh7n\\d",
+    "\\bh9n\\d",
+    "\\bh10n\\d",
+    "\\bh3n8"
+   ],
+   "mode": "zoonotic",
+   "medline": "bird flu",
+   "spread_he": "מעופות ובעלי חיים נגועים אל האדם. אין כרגע הדבקה מתמשכת בין בני אדם.",
+   "incubation": "2–8 ימים",
+   "cfr": "משתנה מאוד בין תת-הזנים",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון זמין לציבור. במדינות מסוימות יש מלאי חירום ל-H5. חיסון השפעת העונתית אינו מגן מפני שפעת העופות.",
+   "israel_he": "בישראל היו התפרצויות בעופות ובעגורים (למשל בחולה 2021). לא דווחו הדבקות בבני אדם.",
+   "don": [
+    "avian influenza"
+   ]
+  },
+  {
+   "id": "hantavirus",
+   "he": "הנטה וירוס",
+   "en": "Hantavirus",
+   "match": [
+    "hantavirus",
+    "andes virus"
+   ],
+   "mode": "zoonotic",
+   "medline": "hantavirus infections",
+   "spread_he": "בשאיפת אבק מזוהם בהפרשות מכרסמים. זן אנדים יכול לעבור גם מאדם לאדם במגע קרוב.",
+   "incubation": "1–8 שבועות",
+   "cfr": "עד 35%–40% (תסמונת ריאתית)",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון מאושר במערב.",
+   "israel_he": "נדיר מאוד בישראל. האשכול הנוכחי קשור לאוניית תיירות, ואפשר שהיו בה נוסעים ישראלים.",
+   "don": [
+    "hantavirus"
+   ]
+  },
+  {
+   "id": "yellow-fever",
+   "he": "קדחת צהובה",
+   "en": "Yellow fever",
+   "match": [
+    "yellow fever"
+   ],
+   "mode": "vector",
+   "vector_il": false,
+   "medline": "yellow fever",
+   "spread_he": "יתוש Aedes aegypti (ויתושי ג'ונגל).",
+   "incubation": "3–6 ימים",
+   "cfr": "30%–60% מהמקרים הקשים",
+   "vaccine": "travel",
+   "vaccine_he": "יש חיסון יעיל מאוד (מנה אחת לכל החיים). בישראל הוא ניתן במרפאות מטיילים, חובה לכניסה לחלק ממדינות אפריקה ודרום אמריקה.",
+   "israel_he": "אין העברה מקומית בישראל, כי וקטור ה-aegypti אינו מבוסס כאן. הסיכון הוא למטיילים לא מחוסנים.",
+   "don": [
+    "yellow fever"
+   ]
+  },
+  {
+   "id": "dengue",
+   "he": "דנגי",
+   "en": "Dengue",
+   "match": [
+    "dengue"
+   ],
+   "mode": "vector",
+   "vector_il": true,
+   "medline": "dengue",
+   "spread_he": "יתושי Aedes (aegypti ו-albopictus, הוא יתוש הטיגריס האסייתי).",
+   "incubation": "4–10 ימים",
+   "cfr": "פחות מ-1% בטיפול מתאים",
+   "vaccine": "travel",
+   "vaccine_he": "יש חיסון (Qdenga), אבל הוא לא בשגרה בישראל ומומלץ בעיקר למי שכבר חלה בעבר.",
+   "israel_he": "יתוש הטיגריס נפוץ בישראל, ולכן התפרצות מקומית קטנה אפשרית. כמעט כל המקרים כאן הם של מטיילים שחזרו מאסיה ומאמריקה הלטינית.",
+   "don": [
+    "dengue"
+   ]
+  },
+  {
+   "id": "chikungunya",
+   "he": "צ'יקונגוניה",
+   "en": "Chikungunya",
+   "match": [
+    "chikungunya"
+   ],
+   "mode": "vector",
+   "vector_il": true,
+   "medline": "chikungunya",
+   "spread_he": "יתושי Aedes, כולל יתוש הטיגריס הנפוץ בישראל.",
+   "incubation": "3–7 ימים",
+   "cfr": "נמוכה, אבל כאבי מפרקים יכולים להימשך חודשים",
+   "vaccine": "travel",
+   "vaccine_he": "יש חיסונים למטיילים (Vimkunya, וגם Ixchiq שהגבילו את השימוש בו). הם לא בשגרה בישראל.",
+   "israel_he": "הווקטור קיים בישראל. באירופה (איטליה וצרפת) היו התפרצויות מקומיות, ולכן העברה מקומית אפשרית גם כאן.",
+   "don": [
+    "chikungunya"
+   ]
+  },
+  {
+   "id": "zika",
+   "he": "זיקה",
+   "en": "Zika",
+   "match": [
+    "zika"
+   ],
+   "mode": "vector",
+   "vector_il": true,
+   "medline": "zika virus",
+   "spread_he": "יתושי Aedes, וגם במגע מיני ומאם לעובר.",
+   "incubation": "3–14 ימים",
+   "cfr": "נמוכה מאוד, אבל מסוכנת לעובר",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון.",
+   "israel_he": "יתוש הטיגריס קיים, אבל הוא וקטור פחות יעיל לזיקה. המקרים בישראל היו של מטיילים.",
+   "don": [
+    "zika"
+   ]
+  },
+  {
+   "id": "oropouche",
+   "he": "אורופוש",
+   "en": "Oropouche",
+   "match": [
+    "oropouche"
+   ],
+   "mode": "vector",
+   "vector_il": false,
+   "medline": "oropouche",
+   "spread_he": "יבחושים (Culicoides) ויתושים באמזונס ובקריביים.",
+   "incubation": "3–10 ימים",
+   "cfr": "נמוכה",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון.",
+   "israel_he": "לא ידועה העברה בישראל. הסיכון הוא למטיילים בדרום אמריקה.",
+   "don": [
+    "oropouche"
+   ]
+  },
+  {
+   "id": "west-nile",
+   "he": "קדחת מערב הנילוס",
+   "en": "West Nile fever",
+   "match": [
+    "west nile"
+   ],
+   "mode": "vector",
+   "vector_il": true,
+   "medline": "west nile virus",
+   "spread_he": "יתושי Culex שעקצו ציפורים נגועות.",
+   "incubation": "2–14 ימים",
+   "cfr": "כ-10% מהמקרים הנוירולוגיים",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון לבני אדם.",
+   "israel_he": "המחלה אנדמית בישראל. ב-2024 הייתה כאן התפרצות גדולה עם יותר מ-900 מקרים ועשרות מתים. הסיכון קיים בכל קיץ, בלי קשר לייבוא.",
+   "endemic_il": true,
+   "don": [
+    "west nile"
+   ]
+  },
+  {
+   "id": "rvf",
+   "he": "קדחת עמק השבר",
+   "en": "Rift Valley fever",
+   "match": [
+    "rift valley"
+   ],
+   "mode": "vector",
+   "vector_il": false,
+   "medline": "rift valley fever",
+   "spread_he": "מגע בדם או ברקמות של בעלי חיים נגועים, ויתושים.",
+   "incubation": "2–6 ימים",
+   "cfr": "פחות מ-1% באופן כללי, וכ-50% בצורה המדממת",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון מאושר לבני אדם. יש חיסון וטרינרי.",
+   "israel_he": "לא דווח בישראל. הסכנה העיקרית היא ייבוא של בעלי חיים.",
+   "don": [
+    "rift valley"
+   ]
+  },
+  {
+   "id": "cchf",
+   "he": "קדחת קרים-קונגו",
+   "en": "Crimean-Congo haemorrhagic fever",
+   "match": [
+    "crimean",
+    "cchf"
+   ],
+   "mode": "vector",
+   "vector_il": true,
+   "medline": "hemorrhagic fevers",
+   "spread_he": "עקיצת קרציות Hyalomma ומגע בדם של בעלי חיים או של חולים.",
+   "incubation": "1–13 ימים",
+   "cfr": "10%–40%",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון מאושר במערב.",
+   "israel_he": "קרציות Hyalomma קיימות באזור. המחלה נפוצה בטורקיה ובעיראק, אבל מקרים בישראל לא דווחו.",
+   "don": [
+    "crimean"
+   ]
+  },
+  {
+   "id": "lassa",
+   "he": "קדחת לאסה",
+   "en": "Lassa fever",
+   "match": [
+    "lassa"
+   ],
+   "mode": "zoonotic",
+   "medline": "hemorrhagic fevers",
+   "spread_he": "מכרסמים (חולדת מסטומיס), וגם הדבקה מוגבלת בבתי חולים.",
+   "incubation": "6–21 ימים",
+   "cfr": "כ-1% באופן כללי, ו-15% בין המאושפזים",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון.",
+   "israel_he": "לא דווח בישראל. המחלה אנדמית במערב אפריקה.",
+   "don": [
+    "lassa"
+   ]
+  },
+  {
+   "id": "mpox",
+   "he": "אבעבועות הקופים (Mpox)",
+   "en": "Mpox",
+   "match": [
+    "mpox",
+    "monkeypox"
+   ],
+   "mode": "contact",
+   "medline": "mpox",
+   "spread_he": "מגע עור-בעור קרוב (כולל מיני), חפצים מזוהמים, ובמידה פחותה טיפות.",
+   "incubation": "3–21 ימים",
+   "cfr": "פחות מ-1% בזן IIb, ויותר בזן I",
+   "vaccine": "risk-groups",
+   "vaccine_he": "חיסון Jynneos ניתן בישראל לקבוצות סיכון. דור שחוסן נגד אבעבועות שחורות (לפני 1980 בערך) מוגן חלקית.",
+   "israel_he": "בישראל היו מאות מקרים ב-2022 (זן IIb). זן Ib מתפשט באפריקה, ונרשמו מקרים מיובאים בעולם.",
+   "don": [
+    "mpox",
+    "monkeypox"
+   ]
+  },
+  {
+   "id": "cholera",
+   "he": "כולרה",
+   "en": "Cholera",
+   "match": [
+    "cholera"
+   ],
+   "mode": "foodwater",
+   "medline": "cholera",
+   "spread_he": "מים ומזון מזוהמים בצואה.",
+   "incubation": "שעות עד 5 ימים",
+   "cfr": "פחות מ-1% בטיפול, ועד 50% בלי טיפול",
+   "vaccine": "travel",
+   "vaccine_he": "יש חיסון פומי (Dukoral/Vaxchora) למטיילים.",
+   "israel_he": "תשתיות המים והביוב בישראל מונעות התפשטות מקומית. הסיכון הוא בעיקר למטיילים.",
+   "don": [
+    "cholera"
+   ]
+  },
+  {
+   "id": "meningitis",
+   "he": "דלקת קרום המוח (מנינגוקוק)",
+   "en": "Meningococcal disease",
+   "match": [
+    "mening"
+   ],
+   "mode": "respiratory",
+   "medline": "meningococcal infections",
+   "spread_he": "טיפות ומגע קרוב.",
+   "incubation": "2–10 ימים",
+   "cfr": "10%–15%",
+   "vaccine": "travel",
+   "vaccine_he": "חיסוני MenACWY ו-MenB קיימים. MenACWY חובה לעולי רגל לחג' ומומלץ למטיילים לאזורים בסיכון.",
+   "israel_he": "מחלה ספורדית בישראל. מגיעים לכאן מקרים בודדים בכל שנה.",
+   "don": [
+    "meningococcal",
+    "meningitis"
+   ]
+  },
+  {
+   "id": "plague",
+   "he": "דבר (מגפת הדבר)",
+   "en": "Plague",
+   "match": [
+    "plague"
+   ],
+   "mode": "zoonotic",
+   "medline": "plague",
+   "spread_he": "פרעושים ממכרסמים. הצורה הריאתית עוברת מאדם לאדם בטיפות.",
+   "incubation": "1–7 ימים",
+   "cfr": "30%–100% בלי טיפול, ונמוכה עם אנטיביוטיקה",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון זמין לציבור. המחלה ניתנת לטיפול באנטיביוטיקה.",
+   "israel_he": "לא דווח בישראל כבר עשרות שנים.",
+   "don": [
+    "plague"
+   ]
+  },
+  {
+   "id": "rabies",
+   "he": "כלבת",
+   "en": "Rabies",
+   "match": [
+    "rabies"
+   ],
+   "mode": "zoonotic",
+   "medline": "rabies",
+   "spread_he": "נשיכה או שריטה של בעל חיים נגוע (כלבים, תנים, שועלים, עטלפים).",
+   "incubation": "שבועות עד חודשים",
+   "cfr": "כמעט 100% אחרי הופעת תסמינים",
+   "vaccine": "travel",
+   "vaccine_he": "חיסון יעיל ניתן אחרי חשיפה (יחד עם אימונוגלובולין), ולמטיילים או לבעלי מקצועות בסיכון גם לפני חשיפה.",
+   "israel_he": "כלבת קיימת בחיות בר בישראל, בעיקר בצפון. אחרי כל נשיכה צריך לפנות ללשכת הבריאות.",
+   "endemic_il": true,
+   "don": [
+    "rabies"
+   ]
+  },
+  {
+   "id": "anthrax",
+   "he": "גחלת (אנתרקס)",
+   "en": "Anthrax",
+   "match": [
+    "anthrax"
+   ],
+   "mode": "zoonotic",
+   "medline": "anthrax",
+   "spread_he": "מגע בבעלי חיים נגועים או אכילת בשר נגוע. בדרך כלל אינה עוברת מאדם לאדם.",
+   "incubation": "1–7 ימים",
+   "cfr": "נמוכה בצורה העורית בטיפול, וגבוהה בצורה הנשימתית",
+   "vaccine": "none",
+   "vaccine_he": "יש חיסון לבעלי מקצועות בסיכון בלבד. המחלה ניתנת לטיפול באנטיביוטיקה.",
+   "israel_he": "נדירה מאוד בישראל.",
+   "don": [
+    "anthrax"
+   ]
+  },
+  {
+   "id": "covid",
+   "he": "קורונה (COVID-19)",
+   "en": "COVID-19",
+   "match": [
+    "covid",
+    "sars-cov-2",
+    "coronavirus disease 2019"
+   ],
+   "mode": "respiratory",
+   "medline": "covid-19",
+   "spread_he": "באוויר ובטיפות.",
+   "incubation": "2–14 ימים",
+   "cfr": "נמוכה כיום, אבל גבוהה יותר בקשישים",
+   "vaccine": "seasonal",
+   "vaccine_he": "חיסון מעודכן מומלץ לבני 65 ומעלה ולקבוצות סיכון.",
+   "israel_he": "רוב האוכלוסייה בישראל חוסנה או החלימה. נתוני disease.sh מוצגים בהמשך העמוד.",
+   "don": [
+    "covid",
+    "coronavirus disease 2019",
+    "novel coronavirus"
+   ]
+  },
+  {
+   "id": "influenza",
+   "he": "שפעת עונתית",
+   "en": "Seasonal influenza",
+   "match": [
+    "seasonal influenza",
+    "^influenza"
+   ],
+   "mode": "respiratory",
+   "medline": "flu",
+   "spread_he": "בטיפות ובאוויר.",
+   "incubation": "1–4 ימים",
+   "cfr": "נמוכה, אבל מסוכנת לקשישים, לתינוקות ולהריון",
+   "vaccine": "seasonal",
+   "vaccine_he": "החיסון מומלץ לכל מי שגילו 6 חודשים ומעלה, ומתעדכן בכל שנה.",
+   "israel_he": "המחלה אנדמית ועונתית בישראל. שיעור ההתחסנות הכללי נמוך יחסית, כ-20%–25%.",
+   "endemic_il": true,
+   "don": [
+    "seasonal influenza",
+    "pandemic (h1n1)",
+    "influenza a(h1n1)"
+   ]
+  },
+  {
+   "id": "unknown-pneumonia",
+   "he": "דלקת ריאות לא מזוהה",
+   "en": "Pneumonia of unknown aetiology",
+   "match": [
+    "undetermined",
+    "unknown (a)?etiology",
+    "unknown origin"
+   ],
+   "mode": "unknown",
+   "medline": "pneumonia",
+   "spread_he": "הגורם עדיין לא זוהה.",
+   "incubation": "לא ידוע",
+   "cfr": "לא ידוע",
+   "vaccine": "none",
+   "vaccine_he": "הגורם לא זוהה, ולכן לא ידוע אם יש חיסון.",
+   "israel_he": "יש טיסות ישירות רבות מרוסיה ותנועת עולים, ולכן כדאי לעקוב אחרי עדכוני ארגון הבריאות העולמי.",
+   "don": [
+    "undetermined",
+    "unknown etiology",
+    "unknown aetiology"
+   ]
+  },
+  {
+   "id": "hepatitis-e",
+   "he": "דלקת כבד E",
+   "en": "Hepatitis E",
+   "match": [
+    "hepatitis e\\b"
+   ],
+   "mode": "foodwater",
+   "medline": "hepatitis E",
+   "spread_he": "מים מזוהמים.",
+   "incubation": "2–10 שבועות",
+   "cfr": "כ-1%, ועד 20% בהריון",
+   "vaccine": "none",
+   "vaccine_he": "אין חיסון מאושר במערב.",
+   "israel_he": "נדיר בישראל.",
+   "don": [
+    "hepatitis e"
+   ]
+  },
+  {
+   "id": "food-toxin",
+   "he": "אירוע בטיחות מזון",
+   "en": "Food safety event",
+   "match": [
+    "food safety",
+    "cereulide",
+    "botulism"
+   ],
+   "mode": "toxin",
+   "medline": "foodborne illness",
+   "spread_he": "אינו מדבק. החשיפה היא דרך מוצר מזוהם.",
+   "incubation": "שעות",
+   "cfr": "משתנה",
+   "vaccine": "none",
+   "vaccine_he": "לא רלוונטי.",
+   "israel_he": "כדאי לבדוק הודעות ריקול של משרד הבריאות על מוצרים שיובאו לישראל.",
+   "don": [
+    "food safety"
+   ]
+  }
+ ],
+ "connectivity": {
+  "high": [
+   "united states",
+   "usa",
+   "america",
+   "russia",
+   "russian federation",
+   "ukraine",
+   "france",
+   "united kingdom",
+   "england",
+   "germany",
+   "italy",
+   "spain",
+   "greece",
+   "cyprus",
+   "türkiye",
+   "turkey",
+   "thailand",
+   "india",
+   "united arab emirates",
+   "uae",
+   "egypt",
+   "jordan",
+   "georgia",
+   "ethiopia",
+   "romania",
+   "hungary",
+   "poland",
+   "netherlands",
+   "philippines",
+   "nepal",
+   "global",
+   "multi",
+   "worldwide",
+   "europe",
+   "cruise"
+  ],
+  "medium": [
+   "china",
+   "brazil",
+   "argentina",
+   "mexico",
+   "japan",
+   "viet nam",
+   "vietnam",
+   "sri lanka",
+   "morocco",
+   "kenya",
+   "south africa",
+   "saudi arabia",
+   "bahrain",
+   "azerbaijan",
+   "kazakhstan",
+   "uzbekistan",
+   "peru",
+   "colombia",
+   "bolivia",
+   "chile",
+   "tanzania",
+   "canada",
+   "portugal",
+   "austria",
+   "czech",
+   "bulgaria",
+   "serbia",
+   "moldova",
+   "belarus",
+   "lebanon",
+   "syria",
+   "iraq",
+   "iran",
+   "eritrea",
+   "indonesia",
+   "cambodia",
+   "laos",
+   "myanmar",
+   "korea",
+   "australia",
+   "uganda",
+   "rwanda",
+   "nigeria",
+   "ghana",
+   "pakistan",
+   "qatar",
+   "oman",
+   "kuwait"
+  ]
+ },
+ "country_he": {
+  "democratic republic of the congo": "הרפובליקה הדמוקרטית של קונגו",
+  "uganda": "אוגנדה",
+  "russian federation": "רוסיה",
+  "kingdom of saudi arabia": "ערב הסעודית",
+  "saudi arabia": "ערב הסעודית",
+  "india": "הודו",
+  "bangladesh": "בנגלדש",
+  "ethiopia": "אתיופיה",
+  "italy": "איטליה",
+  "united states of america": "ארצות הברית",
+  "mauritania": "מאוריטניה",
+  "senegal": "סנגל",
+  "global": "עולמי",
+  "multi-country": "מספר מדינות",
+  "multi-locations": "מספר מיקומים",
+  "african region": "אזור אפריקה",
+  "brazil": "ברזיל",
+  "china": "סין",
+  "egypt": "מצרים",
+  "jordan": "ירדן",
+  "nigeria": "ניגריה",
+  "sudan": "סודן",
+  "rwanda": "רואנדה",
+  "tanzania": "טנזניה",
+  "kenya": "קניה",
+  "guinea": "גינאה",
+  "sierra leone": "סיירה לאון",
+  "liberia": "ליבריה",
+  "pakistan": "פקיסטן",
+  "afghanistan": "אפגניסטן",
+  "cambodia": "קמבודיה",
+  "viet nam": "וייטנאם",
+  "mexico": "מקסיקו",
+  "peru": "פרו",
+  "france": "צרפת",
+  "united kingdom": "בריטניה",
+  "spain": "ספרד",
+  "germany": "גרמניה",
+  "türkiye": "טורקיה",
+  "iraq": "עיראק",
+  "yemen": "תימן",
+  "angola": "אנגולה",
+  "south sudan": "דרום סודן",
+  "chad": "צ'אד",
+  "niger": "ניז'ר",
+  "equatorial guinea": "גינאה המשוונית",
+  "ghana": "גאנה",
+  "cameroon": "קמרון",
+  "democratic republic of congo": "הרפובליקה הדמוקרטית של קונגו",
+  "israel": "ישראל",
+  "thailand": "תאילנד",
+  "morocco": "מרוקו",
+  "timor-leste": "טימור-לסטה",
+  "papua new guinea": "פפואה גינאה החדשה",
+  "united republic of tanzania": "טנזניה",
+  "global situation": "עולמי",
+  "global update": "עדכון עולמי",
+  "region of americas": "יבשת אמריקה",
+  "region of the americas": "יבשת אמריקה",
+  "african region (afro)": "אזור אפריקה",
+  "la réunion": "ראוניון",
+  "mayotte": "מיוט",
+  "philippines": "הפיליפינים",
+  "indonesia": "אינדונזיה",
+  "nepal": "נפאל",
+  "japan": "יפן",
+  "united states": "ארצות הברית",
+  "ukraine": "אוקראינה",
+  "greece": "יוון",
+  "cyprus": "קפריסין",
+  "lebanon": "לבנון",
+  "syria": "סוריה",
+  "syrian arab republic": "סוריה",
+  "iran": "איראן",
+  "argentina": "ארגנטינה",
+  "colombia": "קולומביה",
+  "bolivia": "בוליביה",
+  "chile": "צ'ילה",
+  "canada": "קנדה",
+  "south africa": "דרום אפריקה",
+  "zambia": "זמביה",
+  "malawi": "מלאווי",
+  "mozambique": "מוזמביק",
+  "zimbabwe": "זימבבואה",
+  "burundi": "בורונדי",
+  "somalia": "סומליה",
+  "haiti": "האיטי",
+  "cuba": "קובה",
+  "madagascar": "מדגסקר",
+  "sri lanka": "סרי לנקה",
+  "west africa": "מערב אפריקה",
+  "gabon": "גבון",
+  "republic of congo": "הרפובליקה של קונגו",
+  "republic of the congo": "הרפובליקה של קונגו",
+  "congo": "קונגו",
+  "côte d'ivoire": "חוף השנהב",
+  "zaire": "זאיר (קונגו)",
+  "united kingdom of great britain and northern ireland": "בריטניה",
+  "hong kong sar": "הונג קונג",
+  "hong kong": "הונג קונג",
+  "taiwan": "טייוואן",
+  "singapore": "סינגפור",
+  "algeria": "אלג'יריה",
+  "malaysia": "מלזיה",
+  "netherlands": "הולנד",
+  "ireland": "אירלנד"
+ },
+ "gho": [
+  {
+   "code": "WHS8_110",
+   "label": "חצבת – מנה 1 (MCV1)"
+  },
+  {
+   "code": "MCV2",
+   "label": "חצבת – מנה 2 (MCV2)"
+  },
+  {
+   "code": "WHS4_100",
+   "label": "דיפתריה-טטנוס-שעלת (DTP3)"
+  },
+  {
+   "code": "WHS4_544",
+   "label": "פוליו מומת (IPV)"
+  },
+  {
+   "code": "WHS4_117",
+   "label": "צהבת B (HepB3)"
+  },
+  {
+   "code": "WHS4_129",
+   "label": "המופילוס B (Hib3)"
+  },
+  {
+   "code": "PCV3",
+   "label": "פנאומוקוק (PCV)"
+  },
+  {
+   "code": "ROTAC",
+   "label": "רוטה וירוס"
+  }
+ ]
+}

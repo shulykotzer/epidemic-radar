@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>חקר מגפות</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand">
+      <span class="pulse" aria-hidden="true"></span>
+      <div>
+        <h1>חקר מגפות</h1>
+        <p class="sub">כל דיווחי ארגון הבריאות העולמי על מחלה מסוימת, מ-1996 ועד היום</p>
+      </div>
+    </div>
+    <nav class="nav" aria-label="ניווט">
+      <a href="index.html">מכ״ם</a>
+      <a href="disease.html" aria-current="page">חקר מגפות</a>
+      <a href="learn/index.html">יחידת לימוד</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="block">
+    <div class="block-head">
+      <h2>בחרו מחלה</h2>
+      <div class="filters">
+        <input id="q" type="search" placeholder="חיפוש חופשי באנגלית בארכיון WHO, למשל: SARS, legionellosis…" aria-label="חיפוש חופשי" style="max-width:420px">
+        <button id="go" class="btn" type="button">חיפוש</button>
+      </div>
+    </div>
+    <div id="chips" class="chips"></div>
+  </section>
+
+  <section id="result" class="block" hidden></section>
+</main>
+<div id="tip" class="tip" role="tooltip" hidden></div>
+<script src="assets/core.js"></script>
+<script src="assets/disease.js"></script>
+</body>
+</html>

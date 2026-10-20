@@ -1,0 +1,80 @@
+.research { padding-bottom: 60px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 22px 0 14px; position: sticky; top: 64px; z-index: 4; background: var(--page); padding: 8px 0; }
+@media (max-width: 760px) { .toolbar { top: 0; } }
+.toolbar label.btn { cursor: pointer; }
+.r-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; margin-bottom: 14px; box-shadow: var(--shadow); }
+.r-card h2 { font-size: 20px; }
+.r-head { display: flex; align-items: center; gap: 10px; }
+.r-n { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); color: #fff; display: inline-grid; place-items: center; font-weight: 800; flex: none; font-size: 15px; }
+.hint { font-size: 13.5px; color: var(--ink-2); margin: 6px 0 10px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+@media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+.grid2 label, .fld { display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; font-weight: 500; }
+.fld { margin: 12px 0; }
+.fld span { line-height: 1.5; }
+.research input, .research select, .research textarea { font: inherit; font-weight: 400; font-size: 15px; padding: 9px 11px; border-radius: 9px; border: 1px solid var(--border); background: var(--surface); color: var(--ink); width: 100%; }
+.research textarea { resize: vertical; line-height: 1.6; }
+.research input:focus, .research select:focus, .research textarea:focus { outline: 2px solid var(--accent); outline-offset: 0; }
+.data-panel { margin-top: 14px; background: var(--accent-soft); border-radius: 10px; padding: 12px 14px; }
+.data-panel p { margin: 6px 0 0; font-size: 13.5px; }
+.dp-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+
+/* ---------------- slide deck */
+.deck[hidden] { display: none; }
+.deck { position: fixed; inset: 0; z-index: 100; background: #0f1724; display: flex; flex-direction: column; }
+.deck-bar { display: flex; gap: 8px; align-items: center; justify-content: center; padding: 8px; color: #fff; }
+.deck-bar .btn { background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.2); }
+#slides { flex: 1; position: relative; display: grid; place-items: center; padding: 0 2vw 2vw; }
+.slide { display: none; width: min(96vw, calc((100vh - 70px) * 16 / 9)); aspect-ratio: 16 / 9; background: #fcfcfb; color: #0b0b0b; border-radius: 12px; padding: 4.5% 5.5%; overflow: hidden; flex-direction: column; font-size: clamp(12px, 1.7vw, 28px); }
+.slide.on { display: flex; }
+.slide h2 { font-size: 2.2em; margin: 0; }
+.sl-h { display: flex; align-items: center; gap: .6em; border-bottom: 3px solid #2a78d6; padding-bottom: .5em; margin-bottom: .9em; }
+.sl-h .r-n { width: 1.8em; height: 1.8em; font-size: 1em; }
+.sl-t { margin-inline-start: auto; color: #77756f; font-size: .85em; }
+.sl-body { display: flex; flex-direction: column; gap: .8em; overflow: hidden; }
+.sl-body.cols { display: grid; grid-template-columns: 1fr 1fr; gap: .8em 1.6em; align-content: start; }
+.sl-f b { display: block; color: #2a78d6; font-size: .8em; margin-bottom: .15em; }
+.sl-f p { margin: 0; line-height: 1.45; font-size: .95em; }
+.title-slide { justify-content: center; align-items: flex-start; background: linear-gradient(135deg, #0f2a4a, #2a78d6); color: #fff; }
+.title-slide h1 { font-size: 4em; margin: .1em 0; line-height: 1.1; }
+.sl-kicker { font-size: 1em; opacity: .8; font-weight: 700; letter-spacing: .03em; }
+.sl-en { font-size: 1.2em; opacity: .75; direction: ltr; }
+.sl-names { font-size: 1.4em; margin-top: 1.4em; font-weight: 700; }
+.sl-meta { font-size: 1em; opacity: .8; }
+body.presenting { overflow: hidden; }
+
+/* ---------------- print: the filled-in file prints as landscape slides */
+@media print {
+  body.print-deck .no-print, body.print-deck .tip { display: none !important; }
+  body.print-deck { background: #fff; }
+  body.print-deck .deck { position: static; background: none; display: block; }
+  body.print-deck #slides { display: block; padding: 0; }
+  body.print-deck .slide { display: flex !important; width: 297mm; height: 209mm; aspect-ratio: auto; border-radius: 0; font-size: 15pt; break-after: page; page-break-after: always; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body.print-deck .slide:last-child { break-after: auto; page-break-after: auto; }
+}
+
+/* ---------------- blank worksheet (portrait A4) */
+body.blank { background: #fff; color: #0b0b0b; }
+.ws { max-width: 190mm; margin: 0 auto; padding: 12mm 0; font-size: 11.5pt; }
+.ws-h { display: flex; justify-content: space-between; gap: 20px; border-bottom: 3px solid #2a78d6; padding-bottom: 10px; }
+.ws-h h1 { font-size: 24pt; margin: 2px 0 0; }
+.ws-h .sl-kicker { color: #2a78d6; }
+.ws-meta { display: flex; flex-direction: column; gap: 8px; font-size: 11pt; min-width: 55%; }
+.ws-line { display: inline-block; border-bottom: 1px solid #898781; width: 70%; height: 1em; vertical-align: bottom; }
+.ws-line.short { width: 22%; }
+.ws-intro { background: #e8f1fc; border-radius: 8px; padding: 8px 12px; font-size: 10.5pt; }
+.ws-s { margin-top: 14px; break-inside: auto; }
+.ws-s h2 { display: flex; align-items: center; gap: 8px; font-size: 15pt; margin: 0; }
+.ws-s .r-n { width: 24px; height: 24px; font-size: 12pt; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.ws-s .hint { font-size: 9.5pt; color: #52514e; margin: 2px 0 4px; }
+.ws-q { break-inside: avoid; margin: 6px 0 10px; }
+.ws-q p { margin: 0 0 4px; font-weight: 500; }
+.ws-lines span { display: block; height: 9mm; border-bottom: 1px solid #c3c2b7; }
+.ws-opts { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.ws-f { margin-top: 14px; border-top: 1px solid #c3c2b7; padding-top: 6px; font-size: 9pt; color: #77756f; }
+@media print { body.blank { -webkit-print-color-adjust: exact; print-color-adjust: exact; } .ws { padding: 0; } }
+/* named pages so the deck prints landscape and the worksheet portrait */
+@page deck { size: A4 landscape; margin: 0; }
+@page sheet { size: A4 portrait; margin: 10mm 0; }
+.slide { page: deck; }
+.ws { page: sheet; }

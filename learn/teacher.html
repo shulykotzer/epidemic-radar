@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מדריך למורה ומחוון</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="learn.css">
+<style>
+  .tg { max-width: 980px; margin: 0 auto; padding: 24px 16px 60px; }
+  .tg h1 { font-size: 30px; margin: 0; }
+  .tg h2 { font-size: 22px; margin: 34px 0 10px; padding-bottom: 6px; border-bottom: 2px solid var(--accent); }
+  .tg h3 { font-size: 17px; margin: 18px 0 6px; }
+  .tg p, .tg li { font-size: 15px; line-height: 1.65; }
+  .tg table { width: 100%; border-collapse: collapse; font-size: 13.5px; background: var(--card); }
+  .tg th, .tg td { border: 1px solid var(--grid); padding: 7px 9px; text-align: start; vertical-align: top; }
+  .tg thead th { background: var(--accent-soft); }
+  .tg td.pts, .tg th.pts { text-align: center; white-space: nowrap; font-weight: 700; }
+  .tg .crit { font-weight: 700; width: 17%; }
+  .plan td:first-child { font-weight: 700; white-space: nowrap; }
+  .key { columns: 2; column-gap: 28px; }
+  .key .kq { break-inside: avoid; margin-bottom: 10px; font-size: 13.5px; }
+  .key .kq b { color: var(--good-t); }
+  .key h3 { column-span: all; }
+  .tg-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; flex-wrap: wrap; }
+  .tg-links { display: flex; gap: 8px; flex-wrap: wrap; }
+  .misc li { margin-bottom: 4px; }
+  @media (max-width: 700px) { .key { columns: 1; } .tg table { font-size: 12.5px; } }
+  @media print {
+    @page { size: A4 portrait; margin: 12mm 10mm; }
+    .top, .tg-links, .no-print { display: none !important; }
+    body { background: #fff; }
+    .tg { padding: 0; max-width: none; }
+    .tg h2 { break-after: avoid; }
+    .tg table, .key .kq { break-inside: avoid; }
+    .rubric-wrap { break-before: page; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand"><span class="dot-learn" aria-hidden="true"></span><div><h1>מדריך למורה</h1><p class="sub">מגפות וחיסונים · כיתות י'–י"א</p></div></div>
+    <nav class="nav" aria-label="ניווט">
+      <a href="index.html">יחידת לימוד</a><a href="research.html">תיק חקירה</a><a href="../index.html">מכ״ם</a>
+    </nav>
+  </div>
+</header>
+
+<main class="tg">
+  <div class="tg-top">
+    <div>
+      <h1>מגפות וחיסונים: מדריך למורה ומחוון</h1>
+      <p class="muted" style="margin:4px 0 0">יחידת לימוד במדעי הבריאות · עבודה עם מכ״ם המגפות ועם נתונים חיים מארגון הבריאות העולמי</p>
+    </div>
+    <div class="tg-links">
+      <a class="btn btn-primary" href="../pdf/teacher-guide.pdf" target="_blank">המדריך כ-PDF</a>
+      <a class="btn" href="../pdf/research-worksheet.pdf" target="_blank">דף עבודה ריק</a>
+      <a class="btn" href="research.html?example=1" target="_blank">תיק לדוגמה (אבולה)</a>
+      <a class="btn" href="../pdf/example-research.pdf" target="_blank">התיק לדוגמה כ-PDF</a>
+    </div>
+  </div>
+
+  <h2>מטרות היחידה</h2>
+  <p>בסוף היחידה התלמידים יוכלו:</p>
+  <ol>
+    <li>להבחין בין מחלה ספורדית, אנדמית, התפרצות, אפידמיה ופנדמיה, ולהסביר את המדדים R₀, שיעור תמותה ותקופת דגירה.</li>
+    <li>לתאר את שלושת <b>קווי ההגנה</b> של הגוף ולהסביר את תפקידם של אנטיגן, נוגדן, לימפוציטים מסוג B ו-T ותאי זיכרון.</li>
+    <li>להשוות בין תגובה חיסונית ראשונית לשניונית, ולהסביר באמצעותה איך חיסון פועל.</li>
+    <li>לסווג סוגי חסינות (פעילה או סבילה, טבעית או מלאכותית) וסוגי חיסונים, ולהסביר את מושג חסינות העדר.</li>
+    <li>לנתח נתונים אמיתיים על מגפה, להעריך את הסיכון שלה לישראל ולנמק את ההערכה.</li>
+  </ol>
+
+  <h2>מערך שיעורים מוצע</h2>
+  <table class="plan">
+    <thead><tr><th>שיעור</th><th>נושא</th><th>פעילות מרכזית</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>פרק 1: מה זו מגפה?</td><td>פתיחה במכ״ם: "מה ההתפרצות הבולטת היום, ולמה הסיכון לישראל נמוך או גבוה?". הגדרות, ואחר כך סימולציית R₀ בזוגות: מצאו את אחוז החיסון שעוצר כל מחלה. בוחן עצמי.</td></tr>
+      <tr><td>2</td><td>פרק 2: קווי ההגנה של הגוף</td><td>שלושת קווי ההגנה, גרף התגובה הראשונית והשניונית. שאלת חשיבה: "למה אנחנו חולים בשפעת כמה פעמים, ובחצבת רק פעם אחת?" בוחן עצמי.</td></tr>
+      <tr><td>3</td><td>פרק 3: מגפות בהיסטוריה</td><td>שיטת פסיפס (Jigsaw): כל קבוצה לומדת מגפה אחת ומלמדת את האחרות. דגש: איזה קו הגנה עצר כל מגפה. בוחן עצמי.</td></tr>
+      <tr><td>4</td><td>פרק 4: חיסונים</td><td>סוגי חסינות וסוגי חיסונים, ונתוני החיסון של ישראל. דיון ערכי: חובת חיסון מול חופש הבחירה. בוחן עצמי.</td></tr>
+      <tr><td>5–6</td><td>פרק 5: המחקר</td><td>הדגמה משותפת על תיק החקירה לדוגמה (אבולה), ואחר כך עבודה בקבוצות של 3–4 על מחלה שבחרו. אפשר לעבוד בטלפון או במחשב.</td></tr>
+      <tr><td>7</td><td>הצגות</td><td>כל קבוצה מציגה כ-5 דקות במצב מצגת, ויש 2 דקות לשאלות. הכיתה ממלאת משוב עמיתים לפי המחוון.</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">הבחנים בכל פרק נבדקים אוטומטית, והתלמידים מקבלים הסבר מיד אחרי כל תשובה. ההתקדמות נשמרת במכשיר של התלמיד. אפשר לבקש מהתלמידים צילום מסך של הציון.</p>
+
+  <h3>נקודות שכדאי להדגיש: תפיסות שגויות נפוצות</h3>
+  <ul class="misc">
+    <li><b>"מחלה קטלנית יותר היא מסוכנת יותר לישראל."</b> חומרת המחלה (שיעור תמותה) ויכולת ההתפשטות שלה (R₀, דרך הדבקה, קישוריות) הן שני מדדים נפרדים. אבולה לעומת חצבת היא הדוגמה הטובה ביותר.</li>
+    <li><b>"חסינות עדר אומרת שכולם חסינים."</b> חסינות עדר מגינה גם על מי שאינו מחוסן, כי לנגיף אין "גשר" להתפשט. היא נקבעת ברמה המקומית, ולכן ממוצע ארצי גבוה יכול להסתיר קהילות פגיעות.</li>
+    <li><b>"חיסון mRNA משנה את ה-DNA."</b> ה-mRNA לא נכנס לגרעין, מתורגם בציטופלזמה ומתפרק תוך ימים.</li>
+    <li><b>"אנטיביוטיקה עוזרת נגד נגיפים."</b> אנטיביוטיקה פועלת רק נגד חיידקים.</li>
+    <li><b>"חיסון וזריקת נוגדנים הם אותו דבר."</b> חיסון יוצר חסינות פעילה עם זיכרון. זריקת נוגדנים נותנת חסינות סבילה, מיידית וזמנית.</li>
+  </ul>
+
+  <div class="rubric-wrap">
+  <h2>מחוון לתיק החקירה ולהצגה (100 נקודות)</h2>
+  <table>
+    <thead><tr><th class="crit">קריטריון</th><th>מצוין (100%)</th><th>טוב (75%)</th><th>חלקי (50%)</th><th>חסר (0–25%)</th><th class="pts">ניקוד</th></tr></thead>
+    <tbody>
+      <tr><td class="crit">1. הכרת המחלה</td><td>גורם המחלה, דרך ההדבקה, דגירה, תסמינים ושיעור תמותה מוצגים במדויק ובמילים של התלמידים.</td><td>רוב הפרטים נכונים, אבל אחד חסר או לא מדויק.</td><td>מידע חלקי, או מידע שהועתק בלי הבנה.</td><td>מידע שגוי או חסר.</td><td class="pts">10</td></tr>
+      <tr><td class="crit">2. איפה ומתי + סיווג</td><td>מתארים את גלי ההתפרצות לפי הגרף ומזהים את האזורים שנפגעו, עם הסבר סביר למה דווקא שם. הסיווג (אנדמית, התפרצות וכו') נכון ומנומק בעזרת ההגדרות.</td><td>תיאור נכון של הנתונים, אבל הנימוק לסיווג או ההסבר לאזורים חלקי.</td><td>מתארים נתונים בלי לפרש אותם, או סיווג בלי נימוק.</td><td>לא השתמשו בנתוני האתר.</td><td class="pts">10</td></tr>
+      <tr><td class="crit">3. קווי ההגנה</td><td>מזהים איך הפתוגן עובר את קו ההגנה הראשון. מתארים לפחות שני מנגנונים מהקווים השני והשלישי במונחים נכונים (תאים בולעים, דלקת, אנטיגן, נוגדן, B ו-T, זיכרון). מציעים אמצעי חיצוני מתאים.</td><td>שימוש נכון במונחים, אבל אחד המרכיבים חסר.</td><td>תיאור כללי ("מערכת החיסון נלחמת") בלי מנגנונים.</td><td>טעויות מושגיות, למשל בלבול בין הקווים.</td><td class="pts">15</td></tr>
+      <tr><td class="crit">4. חיסון וחסינות</td><td>קובעים נכון אם יש חיסון ומאיזה סוג, ומסווגים את החסינות (פעילה או סבילה). אם אין חיסון, מציעים סיבה מבוססת. מפרשים את נתון הכיסוי בישראל ביחס לסף חסינות העדר.</td><td>סוג החיסון נכון, אבל הפרשנות לנתוני הכיסוי חלקית.</td><td>מציינים אם יש חיסון בלי הסבר.</td><td>מידע שגוי.</td><td class="pts">15</td></tr>
+      <tr><td class="crit">5. הסיכון לישראל</td><td>מציגים את הערכת המכ״ם, מסכימים או חולקים עליה, ומנמקים בעזרת לפחות שני גורמים. מבחינים בין חומרת המחלה לבין יכולת ההתפשטות שלה.</td><td>נימוק עם גורם אחד בלבד.</td><td>מעתיקים את ההערכה בלי עמדה.</td><td>חסר.</td><td class="pts">10</td></tr>
+      <tr><td class="crit">6. השוואה היסטורית</td><td>השוואה עניינית של לפחות שני היבטים (גורם, הדבקה, ידע, אמצעים), והסקת מסקנה רלוונטית להיום.</td><td>השוואה בהיבט אחד.</td><td>תיאור של שתי המגפות בלי השוואה.</td><td>חסר.</td><td class="pts">10</td></tr>
+      <tr><td class="crit">7. ממצאים והמלצות</td><td>ממצא מפתיע ומעניין. שלוש המלצות מעשיות, אחת לכל רמת הגנה (אדם, קהילה, מדינה), שנובעות מהממצאים.</td><td>המלצות סבירות, אבל לא בכל הרמות.</td><td>המלצות כלליות שלא קשורות למחלה.</td><td>חסר.</td><td class="pts">10</td></tr>
+      <tr><td class="crit">8. ההצגה</td><td>מצגת ברורה. כל חברי הקבוצה מציגים. משלבים נתונים מהאתר (גרף, אחוזים) ועונים היטב על שאלות.</td><td>הצגה ברורה, עם חלוקה לא שווה או מעט נתונים.</td><td>קריאה מהשקפים בלי הסבר.</td><td>לא הוצג.</td><td class="pts">20</td></tr>
+      <tr><td class="crit" colspan="5">מקורות: אם רשימת המקורות חסרה, מורידים עד 5 נקודות.</td><td class="pts">100</td></tr>
+    </tbody>
+  </table>
+
+  <h3>הערכת עמיתים (לתלמידים הצופים)</h3>
+  <p>כל תלמיד כותב על כל הצגה: <b>דבר אחד שלמדתי</b>, <b>שאלה אחת שנשארה לי</b>, ו<b>ציון 1–4</b> לבהירות ההצגה.</p>
+  </div>
+
+  <h2>מפתח תשובות לבחנים</h2>
+  <div class="key" id="key"></div>
+</main>
+<script src="quiz-data.js"></script>
+<script>
+  const T = { q1: "פרק 1: מה זו מגפה?", q2: "פרק 2: קווי ההגנה", q3: "פרק 3: מגפות בהיסטוריה", q4: "פרק 4: חיסונים" };
+  const e = (s) => String(s).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+  document.getElementById("key").innerHTML = Object.entries(QUIZ).map(([id, qs]) =>
+    `<h3>${T[id]}</h3>` + qs.map((q, i) => `<div class="kq">${i + 1}. ${e(q.q)}<br><b>✓ ${e(q.o[q.a])}</b><br><span class="muted">${e(q.why)}</span></div>`).join("")).join("");
+  document.body.dataset.ready = "1";
+</script>
+</body>
+</html>

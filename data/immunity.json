@@ -1,0 +1,217 @@
+{
+ "updated": "2026-10-20",
+ "items": [
+  {
+   "code": "WHS8_110",
+   "label": "חצבת – מנה 1 (MCV1)",
+   "series": [
+    {
+     "year": 2006,
+     "value": 96.0
+    },
+    {
+     "year": 2007,
+     "value": 97.0
+    },
+    {
+     "year": 2008,
+     "value": 98.0
+    },
+    {
+     "year": 2009,
+     "value": 97.0
+    },
+    {
+     "year": 2010,
+     "value": 96.0
+    },
+    {
+     "year": 2011,
+     "value": 97.0
+    },
+    {
+     "year": 2012,
+     "value": 96.0
+    },
+    {
+     "year": 2013,
+     "value": 98.0
+    },
+    {
+     "year": 2014,
+     "value": 97.0
+    },
+    {
+     "year": 2015,
+     "value": 98.0
+    },
+    {
+     "year": 2016,
+     "value": 97.0
+    },
+    {
+     "year": 2017,
+     "value": 98.0
+    },
+    {
+     "year": 2018,
+     "value": 98.0
+    },
+    {
+     "year": 2019,
+     "value": 99.0
+    },
+    {
+     "year": 2020,
+     "value": 99.0
+    },
+    {
+     "year": 2021,
+     "value": 99.0
+    },
+    {
+     "year": 2022,
+     "value": 98.0
+    },
+    {
+     "year": 2023,
+     "value": 98.0
+    },
+    {
+     "year": 2024,
+     "value": 98.0
+    },
+    {
+     "year": 2025,
+     "value": 98.0
+    }
+   ],
+   "world": 84.0,
+   "fetched": "2026-10-20"
+  },
+  {
+   "code": "MCV2",
+   "label": "חצבת – מנה 2 (MCV2)",
+   "series": [],
+   "world": null
+  },
+  {
+   "code": "WHS4_100",
+   "label": "דיפתריה-טטנוס-שעלת (DTP3)",
+   "series": [
+    {
+     "year": 2006,
+     "value": 95.0
+    },
+    {
+     "year": 2007,
+     "value": 95.0
+    },
+    {
+     "year": 2008,
+     "value": 94.0
+    },
+    {
+     "year": 2009,
+     "value": 96.0
+    },
+    {
+     "year": 2010,
+     "value": 95.0
+    },
+    {
+     "year": 2011,
+     "value": 94.0
+    },
+    {
+     "year": 2012,
+     "value": 94.0
+    },
+    {
+     "year": 2013,
+     "value": 96.0
+    },
+    {
+     "year": 2014,
+     "value": 95.0
+    },
+    {
+     "year": 2015,
+     "value": 95.0
+    },
+    {
+     "year": 2016,
+     "value": 94.0
+    },
+    {
+     "year": 2017,
+     "value": 98.0
+    },
+    {
+     "year": 2018,
+     "value": 98.0
+    },
+    {
+     "year": 2019,
+     "value": 98.0
+    },
+    {
+     "year": 2020,
+     "value": 98.0
+    },
+    {
+     "year": 2021,
+     "value": 98.0
+    },
+    {
+     "year": 2022,
+     "value": 98.0
+    },
+    {
+     "year": 2023,
+     "value": 98.0
+    },
+    {
+     "year": 2024,
+     "value": 98.0
+    },
+    {
+     "year": 2025,
+     "value": 98.0
+    }
+   ],
+   "world": 85.0,
+   "fetched": "2026-10-20"
+  },
+  {
+   "code": "WHS4_544",
+   "label": "פוליו מומת (IPV)",
+   "series": [],
+   "world": null
+  },
+  {
+   "code": "WHS4_117",
+   "label": "צהבת B (HepB3)",
+   "series": [],
+   "world": null
+  },
+  {
+   "code": "WHS4_129",
+   "label": "המופילוס B (Hib3)",
+   "series": [],
+   "world": null
+  },
+  {
+   "code": "PCV3",
+   "label": "פנאומוקוק (PCV)",
+   "series": [],
+   "world": null
+  },
+  {
+   "code": "ROTAC",
+   "label": "רוטה וירוס",
+   "series": [],
+   "world": null
+  }
+ ]
+}

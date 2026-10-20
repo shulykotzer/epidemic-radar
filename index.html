@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מכ״ם מגפות ישראל</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <div class="brand">
+      <span class="pulse" aria-hidden="true"></span>
+      <div>
+        <h1>מכ״ם מגפות ישראל</h1>
+        <p class="sub">התפרצויות בעולם: מאיפה הן, מה הסיכון שיגיעו לישראל, ואיזו חסינות יש כאן</p>
+      </div>
+    </div>
+    <nav class="nav" aria-label="ניווט">
+      <a href="index.html" aria-current="page">מכ״ם</a>
+      <a href="disease.html">חקר מגפות</a>
+      <a href="learn/index.html">יחידת לימוד</a>
+    </nav>
+    <div class="top-actions">
+      <span id="updated" class="muted">טוען…</span>
+      <button id="refresh" class="btn" type="button">רענון</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="hero" class="hero" aria-live="polite"><div class="skeleton tall"></div></section>
+
+  <section class="block">
+    <div class="block-head">
+      <h2>התפרצויות אחרונות לפי ארגון הבריאות העולמי</h2>
+      <div class="filters" role="toolbar" aria-label="סינון">
+        <div class="seg" id="range">
+          <button data-days="30">30 יום</button>
+          <button data-days="90" class="on">90 יום</button>
+          <button data-days="365">שנה</button>
+          <button data-days="9999">הכול</button>
+        </div>
+        <div class="seg" id="sort">
+          <button data-sort="risk" class="on">לפי סיכון</button>
+          <button data-sort="date">לפי תאריך</button>
+        </div>
+        <input id="q" type="search" placeholder="חיפוש מחלה או מדינה…" aria-label="חיפוש">
+      </div>
+    </div>
+    <div id="list" class="grid"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <h2>חסינות בישראל: כיסוי חיסוני שגרה</h2>
+      <p class="muted">אחוז הילדים בני שנה שחוסנו (WHO/UNICEF WUENIC), בהשוואה לממוצע העולמי. הקו המקווקו הוא סף 95% הנדרש לחסינות עדר מפני חצבת.</p>
+    </div>
+    <div id="immunity" class="imm-grid"><div class="skeleton"></div><div class="skeleton"></div></div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <h2>קורונה בישראל: נתונים חיים</h2>
+      <p class="muted">מקור: disease.sh (מאגד את נתוני Worldometers ו-JHU)</p>
+    </div>
+    <div id="covid" class="covid"><div class="skeleton"></div></div>
+  </section>
+
+  <section class="block method">
+    <h2>איך מחושב הסיכון?</h2>
+    <p>זו הערכה אוטומטית ולא הערכה רשמית של משרד הבריאות. היא משלבת שלושה רכיבים:</p>
+    <ol>
+      <li><b>סיכון ייבוא:</b> כמה הדיווח עדכני (דיווח אחרון של ארגון הבריאות העולמי), כמה המדינה המקורית מקושרת לישראל (טיסות ישירות, מטיילים, עובדים ועולים), וכמה קל לחולה להעביר את המחלה בזמן נסיעה.</li>
+      <li><b>סיכון התפשטות מקומית:</b> דרך ההדבקה (אוויר, מגע, יתוש), והאם הווקטור קיים בישראל. למשל, יתוש הטיגריס קיים כאן.</li>
+      <li><b>פער חסינות:</b> האם יש חיסון ומה שיעור הכיסוי בישראל לפי ארגון הבריאות העולמי.</li>
+    </ol>
+    <p class="muted">מקורות (כולם חינמיים ובלי מפתח API). דיווחי WHO ונתוני הקורונה נטענים בזמן אמת, ונתוני GHO ו-MedlinePlus מתעדכנים פעם ביום: <a href="https://www.who.int/emergencies/disease-outbreak-news" target="_blank" rel="noopener">WHO Disease Outbreak News</a> · <a href="https://www.who.int/data/gho/info/gho-odata-api" target="_blank" rel="noopener">WHO GHO OData</a> · <a href="https://medlineplus.gov/about/developers/webservices/" target="_blank" rel="noopener">MedlinePlus Web Service</a> · <a href="https://disease.sh" target="_blank" rel="noopener">disease.sh</a>. המידע אינו תחליף לייעוץ רפואי. לפני נסיעה כדאי לפנות למרפאת מטיילים.</p>
+  </section>
+</main>
+
+<dialog id="detail" aria-labelledby="d-title">
+  <div class="dlg">
+    <button class="close" type="button" aria-label="סגירה" onclick="this.closest('dialog').close()">×</button>
+    <div id="d-body"></div>
+  </div>
+</dialog>
+<div id="tip" class="tip" role="tooltip" hidden></div>
+
+<script src="assets/core.js"></script>
+<script src="assets/radar.js"></script>
+</body>
+</html>

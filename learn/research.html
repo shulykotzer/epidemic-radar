@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>תיק חקירה של מגפה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="learn.css">
+<link rel="stylesheet" href="research.css">
+</head>
+<body>
+<header class="top no-print">
+  <div class="wrap top-in">
+    <div class="brand">
+      <span class="dot-learn" aria-hidden="true"></span>
+      <div>
+        <h1>תיק חקירה של מגפה</h1>
+        <p class="sub">עבודה בקבוצות · התשובות נשמרות אוטומטית במכשיר הזה</p>
+      </div>
+    </div>
+    <nav class="nav" aria-label="ניווט">
+      <a href="index.html">יחידת לימוד</a>
+      <a href="research.html" aria-current="page">תיק חקירה</a>
+      <a href="../index.html">מכ״ם</a>
+      <a href="../disease.html">חקר מגפות</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap research no-print" id="form-view">
+  <div class="toolbar">
+    <button class="btn btn-primary" type="button" id="present">▶ מצב מצגת</button>
+    <button class="btn" type="button" id="pdf">שמירה כ-PDF</button>
+    <button class="btn" type="button" id="backup">הורדת גיבוי</button>
+    <label class="btn" for="restore">טעינת גיבוי</label><input type="file" id="restore" accept=".json" hidden>
+    <button class="btn" type="button" id="clear">ניקוי התיק</button>
+    <span id="saved" class="muted" aria-live="polite"></span>
+  </div>
+
+  <section class="r-card group">
+    <h2>פרטי הקבוצה</h2>
+    <div class="grid2">
+      <label>שמות חברי הקבוצה<input data-f="names" type="text" placeholder="נועה, איתי, מאיה, יוסף"></label>
+      <label>כיתה<input data-f="cls" type="text" placeholder="י'2"></label>
+      <label>המחלה שבחרנו<select data-f="disease" id="disease"><option value="">— בחרו מחלה —</option></select></label>
+      <label>תאריך<input data-f="date" type="date"></label>
+    </div>
+    <div id="dataPanel" class="data-panel" hidden></div>
+  </section>
+
+  <div id="sections"></div>
+</main>
+
+<!-- slide deck (presentation + PDF) -->
+<div id="deck" class="deck" hidden>
+  <div class="deck-bar no-print">
+    <button type="button" id="prev" class="btn">→ הקודם</button>
+    <span id="counter"></span>
+    <button type="button" id="next" class="btn">הבא ←</button>
+    <button type="button" id="exit" class="btn">✕ יציאה</button>
+  </div>
+  <div id="slides"></div>
+</div>
+
+<script src="../assets/core.js"></script>
+<script src="research.js"></script>
+</body>
+</html>

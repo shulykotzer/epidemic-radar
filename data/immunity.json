@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20",
+ "updated": "2026-10-21",
  "items": [
   {
    "code": "WHS8_110",
@@ -87,13 +87,95 @@
     }
    ],
    "world": 84.0,
-   "fetched": "2026-10-20"
+   "fetched": "2026-10-21"
   },
   {
    "code": "MCV2",
    "label": "חצבת – מנה 2 (MCV2)",
-   "series": [],
-   "world": null
+   "series": [
+    {
+     "year": 2006,
+     "value": 96.0
+    },
+    {
+     "year": 2007,
+     "value": 90.0
+    },
+    {
+     "year": 2008,
+     "value": 91.0
+    },
+    {
+     "year": 2009,
+     "value": 92.0
+    },
+    {
+     "year": 2010,
+     "value": 93.0
+    },
+    {
+     "year": 2011,
+     "value": 87.0
+    },
+    {
+     "year": 2012,
+     "value": 89.0
+    },
+    {
+     "year": 2013,
+     "value": 95.0
+    },
+    {
+     "year": 2014,
+     "value": 96.0
+    },
+    {
+     "year": 2015,
+     "value": 97.0
+    },
+    {
+     "year": 2016,
+     "value": 97.0
+    },
+    {
+     "year": 2017,
+     "value": 96.0
+    },
+    {
+     "year": 2018,
+     "value": 96.0
+    },
+    {
+     "year": 2019,
+     "value": 98.0
+    },
+    {
+     "year": 2020,
+     "value": 96.0
+    },
+    {
+     "year": 2021,
+     "value": 93.0
+    },
+    {
+     "year": 2022,
+     "value": 92.0
+    },
+    {
+     "year": 2023,
+     "value": 92.0
+    },
+    {
+     "year": 2024,
+     "value": 92.0
+    },
+    {
+     "year": 2025,
+     "value": 92.0
+    }
+   ],
+   "world": 77.0,
+   "fetched": "2026-10-21"
   },
   {
    "code": "WHS4_100",
@@ -181,37 +263,379 @@
     }
    ],
    "world": 85.0,
-   "fetched": "2026-10-20"
+   "fetched": "2026-10-21"
   },
   {
    "code": "WHS4_544",
    "label": "פוליו מומת (IPV)",
-   "series": [],
-   "world": null
+   "series": [
+    {
+     "year": 2021,
+     "value": 98.0
+    },
+    {
+     "year": 2022,
+     "value": 98.0
+    },
+    {
+     "year": 2023,
+     "value": 98.0
+    },
+    {
+     "year": 2024,
+     "value": 98.0
+    },
+    {
+     "year": 2025,
+     "value": 98.0
+    }
+   ],
+   "world": 74.0,
+   "fetched": "2026-10-21"
   },
   {
    "code": "WHS4_117",
    "label": "צהבת B (HepB3)",
-   "series": [],
-   "world": null
+   "series": [
+    {
+     "year": 2006,
+     "value": 96.0
+    },
+    {
+     "year": 2007,
+     "value": 99.0
+    },
+    {
+     "year": 2008,
+     "value": 99.0
+    },
+    {
+     "year": 2009,
+     "value": 98.0
+    },
+    {
+     "year": 2010,
+     "value": 97.0
+    },
+    {
+     "year": 2011,
+     "value": 98.0
+    },
+    {
+     "year": 2012,
+     "value": 97.0
+    },
+    {
+     "year": 2013,
+     "value": 97.0
+    },
+    {
+     "year": 2014,
+     "value": 97.0
+    },
+    {
+     "year": 2015,
+     "value": 96.0
+    },
+    {
+     "year": 2016,
+     "value": 95.0
+    },
+    {
+     "year": 2017,
+     "value": 97.0
+    },
+    {
+     "year": 2018,
+     "value": 96.0
+    },
+    {
+     "year": 2019,
+     "value": 97.0
+    },
+    {
+     "year": 2020,
+     "value": 96.0
+    },
+    {
+     "year": 2021,
+     "value": 96.0
+    },
+    {
+     "year": 2022,
+     "value": 96.0
+    },
+    {
+     "year": 2023,
+     "value": 96.0
+    },
+    {
+     "year": 2024,
+     "value": 96.0
+    },
+    {
+     "year": 2025,
+     "value": 96.0
+    }
+   ],
+   "world": 84.0,
+   "fetched": "2026-10-21"
   },
   {
    "code": "WHS4_129",
    "label": "המופילוס B (Hib3)",
-   "series": [],
-   "world": null
+   "series": [
+    {
+     "year": 2006,
+     "value": 94.0
+    },
+    {
+     "year": 2007,
+     "value": 95.0
+    },
+    {
+     "year": 2008,
+     "value": 94.0
+    },
+    {
+     "year": 2009,
+     "value": 96.0
+    },
+    {
+     "year": 2010,
+     "value": 95.0
+    },
+    {
+     "year": 2011,
+     "value": 94.0
+    },
+    {
+     "year": 2012,
+     "value": 94.0
+    },
+    {
+     "year": 2013,
+     "value": 96.0
+    },
+    {
+     "year": 2014,
+     "value": 95.0
+    },
+    {
+     "year": 2015,
+     "value": 95.0
+    },
+    {
+     "year": 2016,
+     "value": 94.0
+    },
+    {
+     "year": 2017,
+     "value": 98.0
+    },
+    {
+     "year": 2018,
+     "value": 98.0
+    },
+    {
+     "year": 2019,
+     "value": 98.0
+    },
+    {
+     "year": 2020,
+     "value": 98.0
+    },
+    {
+     "year": 2021,
+     "value": 98.0
+    },
+    {
+     "year": 2022,
+     "value": 98.0
+    },
+    {
+     "year": 2023,
+     "value": 98.0
+    },
+    {
+     "year": 2024,
+     "value": 98.0
+    },
+    {
+     "year": 2025,
+     "value": 98.0
+    }
+   ],
+   "world": 78.0,
+   "fetched": "2026-10-21"
   },
   {
    "code": "PCV3",
    "label": "פנאומוקוק (PCV)",
-   "series": [],
-   "world": null
+   "series": [
+    {
+     "year": 2008,
+     "value": 0.0
+    },
+    {
+     "year": 2009,
+     "value": 0.0
+    },
+    {
+     "year": 2010,
+     "value": 0.0
+    },
+    {
+     "year": 2011,
+     "value": 92.0
+    },
+    {
+     "year": 2012,
+     "value": 93.0
+    },
+    {
+     "year": 2013,
+     "value": 94.0
+    },
+    {
+     "year": 2014,
+     "value": 94.0
+    },
+    {
+     "year": 2015,
+     "value": 94.0
+    },
+    {
+     "year": 2016,
+     "value": 93.0
+    },
+    {
+     "year": 2017,
+     "value": 94.0
+    },
+    {
+     "year": 2018,
+     "value": 95.0
+    },
+    {
+     "year": 2019,
+     "value": 95.0
+    },
+    {
+     "year": 2020,
+     "value": 94.0
+    },
+    {
+     "year": 2021,
+     "value": 95.0
+    },
+    {
+     "year": 2022,
+     "value": 94.0
+    },
+    {
+     "year": 2023,
+     "value": 94.0
+    },
+    {
+     "year": 2024,
+     "value": 94.0
+    },
+    {
+     "year": 2025,
+     "value": 94.0
+    }
+   ],
+   "world": 71.0,
+   "fetched": "2026-10-21"
   },
   {
    "code": "ROTAC",
    "label": "רוטה וירוס",
-   "series": [],
-   "world": null
+   "series": [
+    {
+     "year": 2006,
+     "value": 0.0
+    },
+    {
+     "year": 2007,
+     "value": 0.0
+    },
+    {
+     "year": 2008,
+     "value": 0.0
+    },
+    {
+     "year": 2009,
+     "value": 0.0
+    },
+    {
+     "year": 2010,
+     "value": 0.0
+    },
+    {
+     "year": 2011,
+     "value": 0.0
+    },
+    {
+     "year": 2012,
+     "value": 82.0
+    },
+    {
+     "year": 2013,
+     "value": 80.0
+    },
+    {
+     "year": 2014,
+     "value": 81.0
+    },
+    {
+     "year": 2015,
+     "value": 80.0
+    },
+    {
+     "year": 2016,
+     "value": 81.0
+    },
+    {
+     "year": 2017,
+     "value": 81.0
+    },
+    {
+     "year": 2018,
+     "value": 81.0
+    },
+    {
+     "year": 2019,
+     "value": 80.0
+    },
+    {
+     "year": 2020,
+     "value": 79.0
+    },
+    {
+     "year": 2021,
+     "value": 80.0
+    },
+    {
+     "year": 2022,
+     "value": 80.0
+    },
+    {
+     "year": 2023,
+     "value": 80.0
+    },
+    {
+     "year": 2024,
+     "value": 80.0
+    },
+    {
+     "year": 2025,
+     "value": 80.0
+    }
+   ],
+   "world": 61.0,
+   "fetched": "2026-10-21"
   }
  ]
 }

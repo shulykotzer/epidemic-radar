@@ -25,13 +25,19 @@
 .deck-bar { display: flex; gap: 8px; align-items: center; justify-content: center; padding: 8px; color: #fff; }
 .deck-bar .btn { background: rgba(255,255,255,.1); color: #fff; border-color: rgba(255,255,255,.2); }
 #slides { flex: 1; position: relative; display: grid; place-items: center; padding: 0 2vw 2vw; }
-.slide { display: none; width: min(96vw, calc((100vh - 70px) * 16 / 9)); aspect-ratio: 16 / 9; background: #fcfcfb; color: #0b0b0b; border-radius: 12px; padding: 4.5% 5.5%; overflow: hidden; flex-direction: column; font-size: clamp(12px, 1.7vw, 28px); }
+/* All slide sizes are in em and the font is 1.75% of the slide width, so a slide
+   looks the same on screen, in the off-screen measuring box and in print. */
+.slide { --sw: min(96vw, calc((100vh - 70px) * 16 / 9)); display: none; width: var(--sw); aspect-ratio: 16 / 9; background: #fcfcfb; color: #0b0b0b; border-radius: 12px; padding: 4.5% 5.5%; overflow: hidden; flex-direction: column; font-size: calc(var(--sw) * 0.0175); }
 .slide.on { display: flex; }
 .slide h2 { font-size: 2.2em; margin: 0; }
 .sl-h { display: flex; align-items: center; gap: .6em; border-bottom: 3px solid #2a78d6; padding-bottom: .5em; margin-bottom: .9em; }
 .sl-h .r-n { width: 1.8em; height: 1.8em; font-size: 1em; }
 .sl-t { margin-inline-start: auto; color: #77756f; font-size: .85em; }
-.sl-body { display: flex; flex-direction: column; gap: .8em; overflow: hidden; }
+.sl-body { display: flex; flex-direction: column; gap: .8em; overflow: hidden; flex: 1; min-height: 0; }
+.slide.dense .sl-body { font-size: .84em; gap: .6em; }
+.slide h2 small { font-size: .5em; color: #77756f; font-weight: 500; }
+.deck-measure { position: fixed; top: 0; left: 0; z-index: -1; width: 1280px; visibility: hidden; pointer-events: none; }
+.deck-measure .slide { --sw: 1280px; display: flex; height: 720px; aspect-ratio: auto; }
 .sl-body.cols { display: grid; grid-template-columns: 1fr 1fr; gap: .8em 1.6em; align-content: start; }
 .sl-f b { display: block; color: #2a78d6; font-size: .8em; margin-bottom: .15em; }
 .sl-f p { margin: 0; line-height: 1.45; font-size: .95em; }
@@ -49,7 +55,7 @@ body.presenting { overflow: hidden; }
   body.print-deck { background: #fff; }
   body.print-deck .deck { position: static; background: none; display: block; }
   body.print-deck #slides { display: block; padding: 0; }
-  body.print-deck .slide { display: flex !important; width: 297mm; height: 209mm; aspect-ratio: auto; border-radius: 0; font-size: 15pt; break-after: page; page-break-after: always; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body.print-deck .slide { display: flex !important; width: 297mm; height: 209mm; aspect-ratio: auto; border-radius: 0; font-size: calc(297mm * 0.0175); break-after: page; page-break-after: always; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body.print-deck .slide:last-child { break-after: auto; page-break-after: auto; }
 }
 

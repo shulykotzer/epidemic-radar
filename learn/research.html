@@ -33,6 +33,7 @@
   <div class="toolbar">
     <button class="btn btn-primary" type="button" id="present">▶ מצב מצגת</button>
     <button class="btn" type="button" id="pdf">שמירה כ-PDF</button>
+    <button class="btn pptx-btn" type="button">הורדה כ-PowerPoint</button>
     <button class="btn" type="button" id="backup">הורדת גיבוי</button>
     <label class="btn" for="restore">טעינת גיבוי</label><input type="file" id="restore" accept=".json" hidden>
     <button class="btn" type="button" id="clear">ניקוי התיק</button>
@@ -50,6 +51,9 @@
         <li><b>באייפון:</b> במסך ההדפסה לוחצים על <b>כפתור השיתוף</b> (ריבוע עם חץ) ובוחרים <b>"שמירה בקבצים"</b>. אפשר גם לשלוח ישירות בוואטסאפ או במייל.</li>
       </ul>
       <p class="muted">הקובץ יוצא כשקפים: עמוד שער ועוד עמוד לכל חלק בתיק. אפשר להציג אותו בכיתה או להגיש אותו למורה.</p>
+
+      <h3>📊 הורדה כמצגת PowerPoint</h3>
+      <p>לוחצים על <b>"הורדה כ-PowerPoint"</b> (או על "⬇ PowerPoint" במצב מצגת), ויורד קובץ ‎.pptx. אפשר לפתוח אותו ב-PowerPoint, ב-Google Slides או ב-Keynote, ולהוסיף לו תמונות וגרפים מהאתר.</p>
 
       <h3>👥 עבודה מכמה מכשירים</h3>
       <p>התשובות נשמרות רק במכשיר שבו כתבו אותן. כדי להעביר את התיק לחבר בקבוצה:</p>
@@ -82,6 +86,7 @@
     <button type="button" id="prev" class="btn">→ הקודם</button>
     <span id="counter"></span>
     <button type="button" id="next" class="btn">הבא ←</button>
+    <button type="button" class="btn pptx-btn">⬇ PowerPoint</button>
     <button type="button" id="exit" class="btn">✕ יציאה</button>
   </div>
   <div id="slides"></div>

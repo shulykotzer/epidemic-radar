@@ -126,24 +126,137 @@ async function dataPanel() {
     <p class="muted">שימו לב: עליכם לנסח את התשובות במילים שלכם ולהסביר אותן, ולא רק להעתיק נתונים.</p>`;
 }
 
-/* ------------------------------------------------------------ slides */
-const answer = (fd) => {
-  const v = (state[fd.f] || "").trim();
-  return v ? `<div class="sl-f"><b>${esc(fd.s)}</b><p>${esc(v).replace(/\n/g, "<br>")}</p></div>` : "";
-};
-function buildSlides() {
+/* ------------------------------------------------------------ slides
+ * Answers are paginated by measuring them in an off-screen 1280x720 slide:
+ * a slide that overflows first gets a denser font, and if it still doesn't fit
+ * its fields (or one long answer, sentence by sentence) continue on extra slides.
+ * The same slide plan feeds the on-screen deck, the PDF and the PowerPoint export. */
+const slideField = (f) => `<div class="sl-f"><b>${esc(f.label)}</b><p>${esc(f.text).replace(/\n/g, "<br>")}</p></div>`;
+function slideHTML(sp) {
+  if (sp.kind === "title") return `<section class="slide title-slide"><div class="sl-kicker">תיק חקירה של מגפה</div><h1>${esc(sp.title)}</h1>
+    ${sp.en ? `<div class="sl-en">${esc(sp.en)}</div>` : ""}<div class="sl-names">${esc(sp.names)}</div><div class="sl-meta">${esc(sp.meta)}</div></section>`;
+  return `<section class="slide${sp.dense ? " dense" : ""}"><div class="sl-h"><span class="r-n">${sp.n}</span><h2>${esc(sp.t)}${sp.cont ? " <small>(המשך)</small>" : ""}</h2><span class="sl-t">${esc(sp.title)}</span></div>
+    <div class="sl-body${sp.fields.length > 2 ? " cols" : ""}">${sp.fields.length ? sp.fields.map(slideField).join("") : `<p class="muted">(עוד לא מולא)</p>`}</div></section>`;
+}
+
+let measureBox;
+function fits(sp) {
+  if (!measureBox) {
+    measureBox = document.createElement("div");
+    measureBox.className = "deck-measure";
+    measureBox.setAttribute("aria-hidden", "true");
+    document.body.appendChild(measureBox);
+  }
+  measureBox.innerHTML = slideHTML(sp);
+  const body = measureBox.querySelector(".sl-body");
+  return body.scrollHeight <= body.clientHeight + 1;
+}
+function planSlides() {
   const d = KB && KB.diseases.find((x) => x.id === state.disease);
   const title = d ? d.he : "המגפה שלנו";
-  const slides = [`<section class="slide title-slide"><div class="sl-kicker">תיק חקירה של מגפה</div><h1>${esc(title)}</h1>
-    ${d ? `<div class="sl-en">${esc(d.en)}</div>` : ""}
-    <div class="sl-names">${esc(state.names || "")}</div><div class="sl-meta">${esc(state.cls || "")}${state.date ? " · " + esc(new Date(state.date).toLocaleDateString("he-IL")) : ""}</div></section>`];
+  const plan = [{ kind: "title", title, en: d ? d.en : "", names: state.names || "",
+    meta: (state.cls || "") + (state.date ? " · " + new Date(state.date).toLocaleDateString("he-IL") : "") }];
   for (const s of SECTIONS) {
-    const body = s.fields.map(answer).join("");
-    slides.push(`<section class="slide"><div class="sl-h"><span class="r-n">${s.n}</span><h2>${esc(s.t)}</h2><span class="sl-t">${esc(title)}</span></div>
-      <div class="sl-body${s.fields.length > 2 ? " cols" : ""}">${body || `<p class="muted">(עוד לא מולא)</p>`}</div></section>`);
+    const base = { kind: "section", n: s.n, t: s.t, title };
+    const fields = s.fields.map((fd) => ({ label: fd.s, text: (state[fd.f] || "").trim() })).filter((f) => f.text);
+    if (fits({ ...base, fields })) { plan.push({ ...base, fields }); continue; }
+    if (fits({ ...base, fields, dense: true })) { plan.push({ ...base, fields, dense: true }); continue; }
+    // Too long even when dense: pack the answers into as many slides as needed.
+    let page = [];
+    const flush = () => {
+      if (!page.length) return;
+      plan.push({ ...base, fields: page, dense: true, cont: plan.at(-1).n === s.n });
+      page = [];
+    };
+    for (const f of fields) {
+      // Fill the current slide first; a long answer continues sentence by sentence on the next one.
+      let rest = f.text, first = true;
+      while (rest) {
+        const label = f.label + (first ? "" : " (המשך)");
+        if (fits({ ...base, dense: true, fields: [...page, { label, text: rest }] })) { page.push({ label, text: rest }); break; }
+        const parts = rest.match(/[^.!?\n]+[.!?]*\s*|\n/g) || [rest];
+        let take = "", k = 0;
+        while (k < parts.length && fits({ ...base, dense: true, fields: [...page, { label, text: take + parts[k] }] })) take += parts[k++];
+        if (!take.trim()) {
+          if (page.length) { flush(); continue; } // nothing fits next to the earlier answers: start a fresh slide
+          take = parts[0]; k = 1;                 // a single sentence longer than a slide: show it anyway
+        }
+        page.push({ label, text: take.trim() });
+        flush();
+        rest = parts.slice(k).join("").trim();
+        first = false;
+      }
+    }
+    flush();
   }
-  $("#slides").innerHTML = slides.join("");
-  return slides.length;
+  if (measureBox) measureBox.innerHTML = "";
+  return plan;
+}
+function buildSlides() {
+  const plan = planSlides();
+  $("#slides").innerHTML = plan.map(slideHTML).join("");
+  return plan.length;
+}
+
+/* ------------------------------------------------------------ PowerPoint export (PptxGenJS, loaded on demand) */
+function loadPptx() {
+  if (window.PptxGenJS) return Promise.resolve();
+  return new Promise((ok, fail) => {
+    const sc = document.createElement("script");
+    sc.src = "https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js";
+    sc.onload = ok;
+    sc.onerror = () => fail(new Error("load"));
+    document.head.appendChild(sc);
+  });
+}
+async function exportPptx() {
+  const btns = document.querySelectorAll(".pptx-btn");
+  btns.forEach((b) => { b.disabled = true; b.dataset.label = b.textContent; b.textContent = "מכין קובץ…"; });
+  try {
+    await loadPptx();
+    const plan = planSlides();
+    const pptx = new PptxGenJS();
+    pptx.layout = "LAYOUT_WIDE"; // 13.33 x 7.5 in
+    pptx.rtlMode = true;
+    pptx.title = "תיק חקירה - " + plan[0].title;
+    const FONT = "Arial", BLUE = "2A78D6", INK = "0B0B0B", MUTED = "77756F", PALE = "C9DDF5";
+    const R = { rtlMode: true, lang: "he-IL", align: "right", fontFace: FONT };
+    for (const sp of plan) {
+      const sl = pptx.addSlide();
+      if (sp.kind === "title") {
+        sl.background = { color: "1D4F8A" };
+        sl.addText("תיק חקירה של מגפה", { ...R, x: 0.8, y: 1.9, w: 11.7, h: 0.5, fontSize: 18, bold: true, color: PALE });
+        sl.addText(sp.title, { ...R, x: 0.8, y: 2.4, w: 11.7, h: 1.3, fontSize: 54, bold: true, color: "FFFFFF" });
+        if (sp.en) sl.addText(sp.en, { x: 0.8, y: 3.7, w: 11.7, h: 0.5, fontFace: FONT, fontSize: 20, color: PALE, align: "right" });
+        sl.addText(sp.names || " ", { ...R, x: 0.8, y: 4.6, w: 11.7, h: 0.6, fontSize: 26, bold: true, color: "FFFFFF" });
+        sl.addText(sp.meta || " ", { ...R, x: 0.8, y: 5.2, w: 11.7, h: 0.5, fontSize: 18, color: PALE });
+        continue;
+      }
+      sl.background = { color: "FCFCFB" };
+      sl.addShape(pptx.ShapeType.ellipse, { x: 12.0, y: 0.45, w: 0.6, h: 0.6, fill: { color: BLUE }, line: { color: BLUE } });
+      sl.addText(String(sp.n), { x: 12.0, y: 0.45, w: 0.6, h: 0.6, align: "center", valign: "middle", fontFace: FONT, fontSize: 18, bold: true, color: "FFFFFF" });
+      sl.addText(sp.t + (sp.cont ? " (המשך)" : ""), { ...R, x: 4.2, y: 0.38, w: 7.6, h: 0.75, fontSize: 30, bold: true, color: INK, valign: "middle" });
+      sl.addText(sp.title, { ...R, align: "left", x: 0.7, y: 0.5, w: 3.4, h: 0.5, fontSize: 14, color: MUTED });
+      sl.addShape(pptx.ShapeType.line, { x: 0.7, y: 1.25, w: 11.9, h: 0, line: { color: BLUE, width: 2.5 } });
+      const runs = (fs) => fs.flatMap((f) => [
+        { text: f.label, options: { ...R, bold: true, color: BLUE, fontSize: sp.dense ? 13 : 15, breakLine: true } },
+        { text: f.text, options: { ...R, color: INK, fontSize: sp.dense ? 16 : 19, breakLine: true, paraSpaceAfter: 10 } },
+      ]);
+      const box = { ...R, y: 1.5, h: 5.5, valign: "top", fit: "shrink", lineSpacingMultiple: 1.1 };
+      if (!sp.fields.length) sl.addText("(עוד לא מולא)", { ...box, x: 0.7, w: 11.9, color: MUTED, fontSize: 18 });
+      else if (sp.fields.length > 2) {
+        // Two columns, read right to left like the on-screen slide.
+        sl.addText(runs(sp.fields.filter((_, i) => i % 2 === 0)), { ...box, x: 6.85, w: 5.75 });
+        sl.addText(runs(sp.fields.filter((_, i) => i % 2 === 1)), { ...box, x: 0.7, w: 5.75 });
+      } else sl.addText(runs(sp.fields), { ...box, x: 0.7, w: 11.9 });
+    }
+    const fname = ("תיק חקירה - " + plan[0].title + (state.names ? " - " + state.names : "")).replace(/[\\/:*?"<>|]/g, "");
+    await pptx.writeFile({ fileName: fname + ".pptx" });
+  } catch (e) {
+    alert("לא הצלחנו ליצור את קובץ ה-PowerPoint. בדקו את החיבור לאינטרנט ונסו שוב.");
+  } finally {
+    btns.forEach((b) => { b.disabled = false; b.textContent = b.dataset.label; });
+  }
 }
 
 let cur = 0, total = 0;
@@ -152,7 +265,8 @@ function show(i) {
   document.querySelectorAll(".slide").forEach((s, k) => s.classList.toggle("on", k === cur));
   $("#counter").textContent = `${cur + 1} / ${total}`;
 }
-function present() {
+async function present() {
+  await document.fonts.ready; // measure with the real font so the slide plan matches what is shown
   total = buildSlides();
   $("#deck").hidden = false; document.body.classList.add("presenting");
   show(0);
@@ -211,6 +325,7 @@ function renderBlank() {
 
   $("#present").addEventListener("click", present);
   $("#pdf").addEventListener("click", printPDF);
+  document.querySelectorAll(".pptx-btn").forEach((b) => b.addEventListener("click", exportPptx));
   $("#exit").addEventListener("click", exitDeck);
   $("#prev").addEventListener("click", () => show(cur - 1));
   $("#next").addEventListener("click", () => show(cur + 1));
